@@ -1,0 +1,1 @@
+<h2>Thanks!  Magda will get back to you shortly.</h2>

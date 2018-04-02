@@ -1,0 +1,139 @@
+@CHARSET "ISO-8859-1";
+
+.magazine-name {
+	font-style:italic
+}
+
+.article-name {
+    text-decoration:none;
+}
+
+.article-links {
+	clear:both;
+}
+
+a.article-link:visited {
+	color: #444;	
+}
+
+a.article-link:visited:hover {
+	color: #777;	
+}
+
+#view-mag-right, #view-mag-left, #search-articles-right, #search-articles-left  {	
+	width: 48%;	
+	display:inline-block;
+	clear:none;
+}
+
+#search-articles-right {
+	width: 65.5%;
+	float: right;	
+}
+
+#search-articles-right div.scroll-pane {
+	max-height:176px;
+}
+
+#search-articles-left {
+	width: 31%;
+	float:left;	
+	clear: left;
+}
+
+#view-mag-right {
+	float: right;
+	width: 48%;
+}
+
+#view-mag-left {
+	float: left;
+	width: 48%;	
+}
+
+img.scan {
+	max-width: 960px;
+	text-align:center;
+	border: 2px solid #444;
+	margin-bottom: 5px;
+	 margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.article-comments {
+	margin: 20px 50px;
+	font-style:italic;
+	clear:both;
+	/*border-left: 1px solid black;
+	padding-left: 3px;*/
+}
+
+.search-query {
+	display: inline-block
+}
+
+.search-query-parent {
+	clear:both;	
+}
+
+.search-results {
+	clear:both;
+	text-align:center;
+}
+
+.search-results td, .search-results th {
+	text-align:center;	
+}
+
+.article-search-tags-header-title {
+	width: 100%;	
+}
+
+/** Tagging **/
+table tr.untagged-article {
+	background: #ccffb2;
+}
+
+table tr.untagged-article:nth-child(even) {
+	background: #c6f9ad;
+}
+
+/** Nivo-slider (for article scans) **/
+.nivoSlider {
+    position:relative;
+    background:url(jquery/nivoslider/themes/default/loading.gif) no-repeat 50% 50%;
+    min-height:300px;
+}
+.nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+}
+.nivoSlider a {
+    border:0;
+    display:block;
+}
+
+#slider-wrapper {
+	position:relative;
+    clear:both;
+    float:left;
+    width:100%;
+}
+
+#edit-tags-button {
+	z-index: 10;
+	top:30px; /* was: 10px */
+	left:50px; 
+	position:fixed; /* was: absolute */
+	width:150px;
+}
+
+#mag-website-links {
+	max-width: 300px;
+	float: right;
+	max-height: 180px;
+	overflow: auto;
+}

@@ -1,0 +1,1005 @@
+@charset "utf-8";
+/**
+ *
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @since         CakePHP(tm)
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+
+/** Requests **/
+.vacation-service-hidden-paypal-button {
+	display: none;
+}
+
+.vacation-service-paypal-button,.view-cart-paypal-button {
+	width: 25%;
+}
+
+.vacation-service-desc {
+	float: right;
+	width: 79%;
+}
+
+.request-price-note {
+	font-variant: small-caps;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/** Known Emails **/
+form input.added-by-admin {
+	color: #67b021;
+}
+
+#edit-emails-header-buttons-right {
+	width: 40%;
+	float: right;
+}
+
+#edit-emails-header-buttons-right a {
+	float: right;
+}
+
+#edit-emails-header-buttons-left {
+	float: left;
+	width: 40%;
+}
+
+#edit-emails-header-buttons-left a {
+	float: left;
+}
+
+/** Login Page */
+#login-content {
+	width: 500px;
+	text-align: center;
+}
+
+#main-logo {
+	width: 500px;
+}
+
+#need-password {
+	left-margin: auto;
+	right-margin: auto;
+}
+
+/** Header **/
+#header {
+	position: relative;
+}
+
+#background-banner {
+	width: 100%;
+}
+
+#background-banner {
+	top: 27px;
+	position: absolute;
+	height: 183px;
+	border-bottom: 3px solid #444;
+	border-top: 3px solid #444;
+	background: #444;
+	text-align: center;
+	border-right: 2px solid #444;
+	border-left: 2px solid #444;
+}
+
+#background-banner-image {
+	height: 183px;
+	width: 1027px;
+}
+
+#header-row-1 {
+	width: 100%;
+	height: 110px;
+}
+
+.rounded-field {
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#modern-day-exploring {
+	width: 15%;
+	float: left;
+	clear: none;
+	background: black;
+	font-size: 32px;
+	line-height: 35px;
+	color: #fff;
+}
+
+#open-field {
+	height: 40%;
+	width: 60%;
+	float: left;
+	clear: none;
+	margin-left: 20px;
+	margin-top: 10px;
+	background: black;
+	font-size: 32px;
+	line-height: 35px;
+	color: #fff;
+}
+
+#clear-search {
+	float: right;
+	width: 100px;
+	clear: none;
+}
+
+#last-logon-location {
+	width: 15%;
+	height: 40%;
+	float: right;
+	clear: none;
+}
+
+#header-row-2 {
+	height: 69px;
+	margin-top: 25px;
+}
+
+#check-in-location {
+	clear: none;
+	float: left;
+	display: inline;
+	width: 70%;
+	line-height: 35px;
+}
+
+.check-in-city {
+	width: 100%;
+	font-size: 24px;
+	display: inline;
+	float: left;
+	clear: none;
+	line-height: 35px;
+}
+
+.check-in-venue-name {
+	display: block;
+	clear: both;
+	font-size: 24px;
+	line-height: 35px;
+}
+
+.reduced-check-in-field {
+	font-size: 20px;
+	line-height: 25px;
+}
+
+#local {
+	display: inline;
+	float: right;
+	clear: none;
+	width: 28%;
+	margin-bottom: 10px;
+	/*font-family: museo-sans-1, museo-sans-2, Arial, Helvetica, sans-serif;*/
+}
+
+#local-right {
+	float: right;
+}
+
+#local-left {
+	float: left;
+}
+
+#local-time,#local-temp {
+	width: 100%;
+	font-weight: bold;
+}
+
+#local-time,#local-temp {
+	font-size: 22px;
+	line-height: 35px;
+}
+
+#trip-selection-parent {
+	width: 18%;
+	float: right;
+}
+
+#trip-selection-parent select {
+	margin-top: 10px;
+	margin-left: 20px;
+	width: 155px;
+}
+
+.border-box {
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px;
+}
+
+.header-field {
+	/*font-family: museo-sans-1, museo-sans-2, Arial, Helvetica, sans-serif;*/
+	
+}
+
+/** Poll and Message Styles **/
+#poll { /*width: 50%;*/
+	width: 71.5%;
+}
+
+#poll-desc {
+	width: 100%;
+}
+
+.poll-prompt {
+	font-weight: bold;
+	color: #444
+}
+
+.poll-caption {
+	font-style: italic;
+	font-size: 13px;
+}
+
+#poll-resp-form {
+	width: 100%;
+}
+
+#poll-resp-form>form {
+	width: 100%;
+}
+
+#poll-resp-form>form div.submit {
+	margin-top: 0px;
+}
+
+#poll-resp-div {
+	width: 960px;
+}
+
+.poll-resps {
+	width: 444px;
+	float: left;
+}
+
+#header-search {
+    float:right;
+    max-width:18%;
+    margin-right:0px;
+}
+
+#header-search div.input {
+    width:100%;
+}
+
+#header-search div.submit {
+    margin-top:0px;
+    float:right;
+    position:absolute;
+    right:-20px;
+}
+
+/** Adventure Digest Styles **/
+#adv-titles {
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+#adv-titles-parent {
+	
+}
+
+/** Banner **/
+#banner {
+	background: #444;
+	width: 100%;
+	float: left;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+	display: block;
+	position: relative;
+	margin: 20px 0px;
+	border-radius: 5px;
+	border-bottom: 1px solid #fff;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, .75);
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+}
+
+.horizontal-scroll-pane {
+	overflow-y: hidden;
+	width: 99%;
+	float: left;
+	height: 125px;
+	margin-top: 10px
+}
+
+.scroll-content-item {
+	height: 100px;
+	margin: 2px;
+	font-size: 3em;
+	line-height: 96px;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+	text-align: center;
+	overflow: hidden;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: middle;
+	border-width: 0px !important;
+}
+
+.scroll-content-item img {
+	height: 100px;
+}
+
+/** Vertically Aligned Sections **/
+.vertical-scroll-pane {
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 99%;
+	max-height: 200px;
+}
+
+/* Dialog */
+.no-close .ui-dialog-titlebar-close {
+	display: none;
+}
+
+/** Photo Dialog **/
+#photo-dialog {
+	position: fixed;
+	/*max-width: 940px;*/
+	border: 10px solid #444;
+	border-top-size: 5px;
+	top: 10px;
+	z-index: 1000;
+	background: #444;
+	/*display: inline-block;*/
+}
+
+#photo-dialog img {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+#photo-dialog-titlebar {
+	background: #444;
+	height: auto;
+	color: #444;
+}
+
+.photo-dialog-titlebar-button {
+	color: #666;
+	border: 1px solid #666;
+	padding: 1px 8px 4px 8px;
+	float: left;
+	width: 10px;
+	height: 20px;
+	margin: 0px 10px 5px 0px;
+}
+
+#photo-dialog-titlebar-close {
+	float: right;
+	margin-right: 0px;
+}
+
+.photo-dialog-titlebar-button:hover {
+	color: white;
+	border-color: white;
+	background-color: #666;
+}
+
+#photo-dialog-like-button {
+	clear: both;
+	float: left;
+}
+
+/** Trip Header (Stats, Message, and Map) **/
+#trip-nav-parent {
+	margin-top: 20px;
+}
+
+#trip-header-parent {
+	
+}
+
+#trip-header {
+	width: 100%;
+	position: relative;
+}
+
+#above-banner-expandable-elements,#sub-banner-expandable-elements {
+	clear: both;
+}
+
+#check-in-location-map-parent {
+	background: #fff;
+	width: 25%;
+	margin-bottom: 0px;
+	float: left;
+}
+
+#check-in-location-map {
+	width: 100%;
+	height: 240px;
+	border: 1px solid #444;
+	margin-top: 5px;
+	clear: none
+}
+
+#main-content-container {
+	margin-top: 25px;
+}
+
+#main-content {
+	width: 72.5%;
+	float: right;
+}
+
+#message-pane {
+	width: 100%;
+	float: left;
+	clear: none;
+	position: relative;
+}
+
+#message-from-magda {
+	float: left;
+	clear: none;
+	text-align: left;
+	margin-left: 10px;
+	width: 65%;
+}
+
+#statistics {
+	width: 30%;
+	float: right;
+	clear: none;
+	position: relative;
+}
+
+#stats-note {
+	font-size: 16px;
+	position: absolute;
+	bottom: 20px;
+	right: 0px;
+}
+
+#statistics>div.left-side div {
+	margin-bottom: 20px;
+	font-family: league-gothic-1, league-gothic-2, Arial, Helvetica,
+		sans-serif;
+	font-size: 18px;
+}
+
+#statistics .stat {
+	font-weight: bold;
+}
+
+.section-header .trip-header-buttons {
+	padding: 0px;
+    float:right;
+}
+
+.section-header h4 {
+    float:left;
+}
+
+.section-header .radio {
+    float:right;
+}
+
+.section-header .radio label, .section-header .radio input {
+    float:left;
+    display:inline;
+    margin-left: 5px;
+}
+
+.section-header .radio label {
+    font-size: 100%;
+}
+
+#create-trip-button {
+	margin-top: 20px;
+	float: right;
+}
+
+#create-adv-button {
+	border-bottom: 2px solid black;
+	width: 100%;
+}
+
+#create-adv-button a {
+	float: right;
+}
+
+#set-homepage-button {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	z-index: 10;
+}
+
+/** General Trip Styles **/
+.page-element-parent {
+	border: 2px solid #444;
+	padding: 5px;
+	overflow-x: hidden;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.right-side-page-element { /*width: 46.5%;*/
+	width: 71.5%;
+	clear: right;
+	float: right;
+}
+
+.left-side-page-element {
+	width: 46.5%;
+	clear: left;
+	float: left;
+}
+
+.section-header-wrapper {
+	clear: both;
+	width: 100%;
+}
+
+.section-header-wrapper .actions a {
+	margin-left: 5px;
+}
+
+.section-body {
+	width: 100%;
+}
+
+.section-header {
+	float: left;
+	clear: none;
+	font-weight: bold;
+	width: 95%;
+}
+
+.section-header-title, .poll-prompt {
+	float: left;
+}
+
+.page-element-toggler {
+	font-size: 16px;
+	font-weight: bolder;
+	border: 2px solid #444;
+	padding: 0px 7px;
+	float: right;
+}
+
+.page-element-toggler:hover {
+	background: #5BA150;
+}
+
+/** Adventure Style **/
+.adv {
+	width: 100%;
+	clear: both;
+}
+
+.tags {
+	clear: both;
+	margin: 5px 0px;
+}
+
+.sidebar-adv-tags,.inline-tags {
+	clear: none;
+}
+
+form .submit input[type=submit], div.tags a, #search div.tags a, .button {
+	background-color: #5BA150;
+	margin-right: 5px;
+	border: 1px solid #444;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: white;
+	text-decoration: none;
+	clear: none;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+	text-align: right;
+}
+
+div.tags a {
+    padding: 2px 5px;
+    float: left;
+}
+
+.small-tags a {
+	font-size: 90%;
+	line-height: 20px;
+}
+
+.inline-tags {
+	display: inline;
+}
+
+.inline-tags a {
+	float: none !important;
+}
+
+form .submit input[type=submit]:hover, div.tags a:hover,#search div.tags a:hover, .button:hover {
+	color: #444;
+}
+
+div.tags b {
+	float: left;
+}
+
+.adv-invisible-note {
+	font-style: italic;
+	font-size: 85%;
+}
+
+.adv-story {
+	width: 400px;
+	float: left;
+	clear: none;
+	margin-bottom: 20px;
+}
+
+.main-adv-pane img {
+	clear: none;
+	border: 5px solid #444;
+	background: #444;
+}
+
+.main-adv-pane img,div.adv-photo {
+	width: 250px;
+	float: right;
+	max-width: 250px;
+	clear: right;
+}
+
+div.adv-photo:last-child {
+	margin-bottom: 20px;
+}
+
+div.adv-photo {
+	margin-bottom: 7px;
+	cursor: pointer;
+}
+
+div.adv-photo-title,#photo-dialog-titlebar,#photo-dialog-adv-link,#photo-dialog-adv-link-parent
+	{
+	text-align: center;
+	border: 5px solid #444;
+	background: #444;
+	font-family: 'frutiger linotype', 'lucida grande', verdana, sans-serif;
+}
+
+div.adv-photo-title,#photo-dialog-titlebar,#photo-dialog-adv-link-parent
+	{
+	color: white;
+	font-size: .9em;
+}
+
+#photo-dialog-adv-link,#photo-dialog-adv-link-parent {
+	font-size: .85em;
+}
+
+#photo-dialog-adv-link { /*color: #5BA150;*/
+	
+}
+
+div.adv-photo-title {
+	width: 100%;
+	float: right;
+}
+
+div.adv-actions {
+	float: left;
+	clear: both;
+	border-bottom: 2px solid #444;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+div.adv-admin-actions,div.admin-actions {
+	float: right;
+}
+
+span.likes-display {
+	border: 1px solid #444;
+	padding: 0px 4px;
+	color: white;
+	background: #5BA150;
+}
+
+.adv-field {
+	text-align: left;
+}
+
+.adv-title {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.adv-title-caption {
+	font-size: 80%;
+}
+
+.adv-date {
+	font-style: normal;
+}
+
+/** Images **/
+#deleteImages {
+	float: left;
+	clear: none;
+}
+
+div.thumbnail>img,div.header-background-thumbnail>img {
+	border: black solid 1px;
+	margin-bottom: 5px;
+	clear: both;
+}
+
+div.thumbnail {
+	width: 100px;
+	margin-bottom: 10px;
+}
+
+div.thumbnail>img {
+	width: 100px;
+	height: 100px;
+}
+
+div.header-background-thumbnail img { /*height: 100px;*/
+	
+}
+
+div.header-background-thumbnail { /*height: 100px;*/
+	margin-bottom: 10px;
+	position: relative;
+}
+
+#header-background-img-crop-area {
+	width: 960px;
+	height: 166px;
+	position: absolute;
+	z-index: 100;
+	background: #eee;
+	opacity: 0.5;
+	border-top: 2px solid #444;
+	border-bottom: 2px solid #444;
+	filter: alpha(opacity = 50); /* For IE8 and earlier */
+}
+
+#header-background-img {
+	width: 960px;
+}
+
+div.expLeft {
+	float: left;
+	clear: none;
+	width: 65%;
+}
+
+div.expRight {
+	float: left;
+	clear: none;
+	width: 30%;
+}
+
+/** Enter page **/
+.siteTitle {
+	font-size: 350%;
+	/*font-family: 'Gill Sans', 'lucida grande', helvetica, arial, sans-serif;*/
+	color: #cc9900;
+}
+
+/** Comments **/
+.comments-title {
+	color: black;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	clear: both;
+}
+
+.comments {
+	clear: both;
+	width: 723px;
+	min-wdith: 618px;
+	margin-top: 20px;
+}
+
+.comment {
+	clear: both;
+	font-size: 80%;
+}
+
+.comment-body {
+	float: left;
+	clear: none;
+	width: 87%;
+}
+
+.comment-date {
+	float: right;
+	clear: both;
+}
+
+.comment-value {
+	border: 1px solid black;
+	padding: 3px 4px;
+	background-color: white;
+	margin-bottom: 0px;
+	font-size: 15px;
+	clear: both;
+}
+
+.comment-like-button {
+	float: right;
+	line-height: 15px;
+}
+
+/** Poll Display **/
+.pollOptionCol {
+	width: 10%;
+}
+
+.pollRespondantCol {
+	width: 15%;
+}
+
+.pollOptionResp {
+	text-align: center;
+	font-weight: bold;
+}
+
+.pollMessage {
+	border: #2C6877 solid 2px;
+	padding: 5px;
+}
+
+/** General Style Info **/
+body,.body {
+	background: white;
+	/*color: #fff;*/
+	font-family: adobe-garamond-pro-1, adobe-garamond-pro-2,
+		'Times New Roman', Times, serif;
+	font-size: 16px;
+	margin: 0;
+	color: #666;
+	line-height: 25px;
+}
+
+/** Layout **/
+#container {
+	
+}
+
+#header h1,#footer h1 {
+	line-height: 20px;
+	background: #003d4c; /*url('../img/cake.icon.png') no-repeat left;*/
+	color: #fff;
+	padding: 0px 30px;
+}
+
+#header {
+	min-height: 265px;
+}
+
+#footer {
+	clear: both;
+	padding: 6px 10px;
+	text-align: right;
+}
+
+/** containers **/
+#content,#header,#content-parent {
+	width: 960px;
+	/*padding: 10px 0%;*/
+	clear: none;
+	color: #333;
+	overflow: visible;
+}
+
+#content-parent {
+	background: #eee;
+	border-right: 3px solid #444;
+	border-left: 3px solid #444;
+	border-bottom: 3px solid #444;
+	padding: 0px 2.7%
+}
+
+#sidebar {
+	float: left;
+	width: 25%;
+	clear: left;
+	margin-right: 10px;
+}
+
+#sidebar a {
+	color: black;
+	font-weight: normal;
+	text-decoration: none;
+	float: left;
+	clear: left;
+	margin-bottom: 5px;
+	text-align: right;
+}
+
+.actions a:hover
+/*nav.trip-nav a.active-trip, nav.trip-nav a:hover*/ {
+	background-image: linear-gradient(bottom, rgb(150, 147, 145) 12%,
+		rgb(191, 191, 191) 56%, rgb(171, 171, 171) 83% ) !important;
+	background-image: -o-linear-gradient(bottom, rgb(150, 147, 145) 12%,
+		rgb(191, 191, 191) 56%, rgb(171, 171, 171) 83% ) !important;
+	background-image: -moz-linear-gradient(bottom, rgb(150, 147, 145) 12%,
+		rgb(191, 191, 191) 56%, rgb(171, 171, 171) 83% ) !important;
+	background-image: -webkit-linear-gradient(bottom, rgb(150, 147, 145) 12%,
+		rgb(191, 191, 191) 56%, rgb(171, 171, 171) 83% ) !important;
+	background-image: -ms-linear-gradient(bottom, rgb(150, 147, 145) 12%,
+		rgb(191, 191, 191) 56%, rgb(171, 171, 171) 83% ) !important;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.12, rgb(150
+		, 147, 145) ), color-stop(0.56, rgb(191, 191, 191) ),
+		color-stop(0.83, rgb(171, 171, 171) ) ) !important;
+}
+
+#sidebar a:hover {
+	color: #003d4c;
+}
+
+#instant-updates {
+	clear: both;
+}
+
+#sidebar label {
+	clear: both;
+}
+
+.prompt {
+	padding-left: 7px;
+}
+
+#search {
+	border-top: 2px solid #444;
+	margin-top: 10px;
+}
+
+#trunks-img-container {
+	width: 25%;
+	clear: none;
+	float: left;
+	/*border-top:2px solid #444;*/
+}
+
+#trunks-img-container img {
+	width: 100%;
+}
+
+/** google autocomplete */
+.ac_results li img {
+	float: left;
+	margin-right: 5px;
+}
+
+
