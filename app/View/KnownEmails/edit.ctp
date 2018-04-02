@@ -1,6 +1,7 @@
 <h2>Known Emails</h2>
 
 <?php if(!empty($sendData)): ?>
+<?php pr($sendData) ?>
 
 <?php echo $this->Form->create('KnownEmail'); ?>
 	<?php echo $this->Form->input('new', array('type' => 'textarea', 'label' => 'Additional recipients:', 'rows' => 2)); ?>
@@ -108,11 +109,12 @@ $(document).ready(function() {
 	$('input').change(function() {
 		var row = $(this).closest('tr');
 		var id = row.find('[id*=KnownEmailId]').val();
+		console.log(id);
 		var field = $(this).attr('field');
 
-		var data = {};
-		data['id'] = id;
-
+		let data = {};
+		data.id = id;
+		
 		if (field == 'send_updates') {
 			data[field] = $(this).is(':checked') ? 1 : 0;
 		} else {
@@ -132,7 +134,7 @@ $(document).ready(function() {
 				
 	});	
 
-	function updateEmail(update, args) {	
+	function updateEmail(update, args) {		
 		if (update) {
 			$.ajax({									
 				data: args,

@@ -50,11 +50,11 @@
     	$('#dialog').dialog('open');
     };    	  
     
-	$.confirm = function(message, confirmCallback, args) {
+	$.confirm = function(message, confirmCallback, data) {		
 	    	if ($('#confirm').length == 0) {
 	    		$('#container').append('<div id="confirm"><p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><span id="confirm-message"></span></p></div>');
 	    		
-	    		$( "#confirm" ).dialog({
+	    		$( "#confirm" ).dialog({				
 	    		  dialogClass: "no-close",
 	    		  autoOpen: false,
 		  	      resizable: false,  	      
@@ -62,18 +62,20 @@
 		  	      buttons: {
 		  	        "Ok": function() {
 		  	          $(this).dialog( "close" );
-		  	          confirmCallback(true, args);
-		  	        },
+					  console.log('in',$(this).data('data'));
+		  	          confirmCallback(true, $(this).data('data'));
+					},
 		  	        Cancel: function() {
 		  	          $(this).dialog( "close" );
-		  	          confirmCallback(false, args);	  	          
+		  	          confirmCallback(false, $(this).data('data'));				
 		  	        }
 		  	      }
 	    		});
 	    	}
 	    	
 	    	$('#confirm-message').text(message);
-	    	$('#confirm').dialog('open');
+			//use .data to pass data (to prevent weird binding or parameter).
+	    	$('#confirm').data('data', data).dialog('open');				
 	    };    	   
 	
     $.fn.nextElementInDom = function(selector, options) {

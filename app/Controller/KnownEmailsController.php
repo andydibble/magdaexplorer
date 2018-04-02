@@ -49,8 +49,8 @@ class KnownEmailsController extends AppController {
 	 */
 	function edit() {
 		$sendData = $this->request->params['named'];
-
-		if (!$this->Session->check($this->SEND_DATA_KEY) && $sendData) {
+		
+		if (isset($sendData['model']) && isset($sendData['id'])) {
 			$this->Session->write($this->SEND_DATA_KEY, $sendData);
 		}
 
@@ -145,7 +145,7 @@ class KnownEmailsController extends AppController {
 		if ($this->isAdmin()){
 				
 			$sendData = $this->Session->read($this->SEND_DATA_KEY);
-						
+			
 			if ($sendData) {
 				$this->set('sendData', $sendData);
 
@@ -162,7 +162,7 @@ class KnownEmailsController extends AppController {
 						));
 
 						$this->Email->templateVars['adv'] = $adv;
-						pr($adv);
+							
 						break;
 					case 'Article':
 						$art = $this->Article->find('first', array(
