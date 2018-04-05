@@ -75,7 +75,7 @@
 
 <div id="comments" style="clear:both">
 	<?php if(count($adv['Comment']) > 0): ?>
-	<span class="comments-title">Comments</span>	
+	<div class="comments-title">Comments</div>	
 	<div class="actions">
 	<a id="select-all">Select All</a>
 	<a id="deselect-all">Deselect All</a>

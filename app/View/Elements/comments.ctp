@@ -1,6 +1,6 @@
 <div class="comments">		
 	<?php if(isset($title) && count($comments) > 0):?>
-	<span class="comments-title"><?php echo $title?></span>
+	<div class="comments-title"><?php echo $title?></div>
 	<?php endif?>
 	
 	<?php if(count($comments) == 0):?>

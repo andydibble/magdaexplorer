@@ -20,7 +20,8 @@ $.fn.extend({
 			mapwidth: 100,
 			mapheight: 100,
 			maptype: 'terrain',
-			mapkey: 'ABQIAAAAbnvDoAoYOSW2iqoXiGTpYBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQNumU68AwGqjbSNF9YO8NokKst8w', // localhost
+			mapkey: 'AIzaSyCdTgvWsM2hWoz-BEYMOo3FFjpxmRWPB_0',
+			//mapkey: 'ABQIAAAAbnvDoAoYOSW2iqoXiGTpYBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQNumU68AwGqjbSNF9YO8NokKst8w', // localhost
 			mapsensor: false,
 			parse: function(_results, _status, _query) {
 				var _parsed = [];

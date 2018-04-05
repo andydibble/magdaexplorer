@@ -29,13 +29,22 @@
 				'url' => array('controller' => 'trips', 'action' => "index",3),
 				'type' => 'get',
 				'id' => 'header-search')) ?>
-			<?php echo $this->Form->input('Adventure.searchTerm', array('type' => 'text', 'label' => false)); ?>
-			<?php
-			if (isset($searchPerformed)) {
-				echo $this->Form->end('Clear Search');
-			} else {
-				echo $this->Form->end('Search');
-			} ?>
+			<?php 
+			$placeholder = "Search";
+			if(isset($searchPerformed)) { 
+				$placeholder = "Submit to clear search";
+			}
+			
+			echo $this->Form->input('searchTerm', array(				
+				'type' => 'text', 
+				'label' => false,
+				'placeholder' => $placeholder,
+				'id' => "AdventureSearchTerm"
+			));					
+			echo $this->Form->end(' '); //echo '<input type="submit" value=" " />'; 
+			?>			
+			
+			
 
 		</div>
 		<div id="header-row-2">
@@ -53,10 +62,10 @@
 						<?php echo $localTime ?>
 					</div>
 				</div>
-				<div id="local-right">
+				<!--<div id="local-right">
 					local temp:
 					<div id="local-temp"></div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 
@@ -103,17 +112,6 @@
 					<?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
-		</nav>
-
-		<!--<div id="header-trip-nav" class="actions trip-nav">
-			<div id='mbtnavbar'>
-				<ul id='mbtnav'>
-
-
-
-
-				</ul>
-			</div>
-		</div>-->
+		</nav>		
 	</div>
 <?php endif;

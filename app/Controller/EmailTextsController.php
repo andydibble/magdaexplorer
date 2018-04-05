@@ -17,7 +17,7 @@ class EmailTextsController extends AppController {
 	}
 	
 	function edit($id) {
-		if ($this->data) {		
+		if ($this->data) {				
 			if ($this->EmailText->save($this->data)) {
 				$this->Session->setFlash('Your changes were saved.');
 				$this->redirect('/trips/index');

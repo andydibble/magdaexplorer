@@ -18,8 +18,7 @@
 
 //$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
@@ -52,24 +51,20 @@
 	echo $this->Html->css('mbt/mbtnav');
 
 	if (!empty($isAdmin) && $isAdmin):
-		echo $this->Html->css('geo-autocomplete/jquery.autocomplete.css'); //has some modifications for place autocomp.
-
 		echo $this->Html->css('/JavaScriptSpellCheck/extensions/fancybox/jquery.fancybox-1.3.4.css');
 	endif;
 
 	//--start scripts--//
 	echo $this->Html->script('jquery/jquery-1.7.1.js');
 	echo $this->Html->script('jquery/utility.js');
-	echo $this->Html->script('jquery/jquery.simpleWeather.min.js');
+	echo $this->Html->script('jquery/jquery.simpleWeather.min.js');	
 
-	//echo $this->Html->script("http://maps.google.com/maps/api/js?sensor=false");
-
-	if (!empty($isAdmin) && $isAdmin):
-		echo $this->Html->script('geo-autocomplete/jquery.autocomplete_geomod');
-		echo $this->Html->script('geo-autocomplete/geo_autocomplete');
+	if (!empty($isAdmin) && $isAdmin):		
 		echo $this->Html->script('SetupAutocomplete.js');
 		?>
 
+		<?php echo $this->Html->script('https://maps.googleapis.com/maps/api/js?key=AIzaSyCdTgvWsM2hWoz-BEYMOo3FFjpxmRWPB_0&libraries=places', array('inline' => false)); ?>				
+		
 		<?php echo $this->Html->script('http://js.nicedit.com/nicEdit-latest.js', array('inline' => false)); ?>
 		<?php echo $this->Html->script('TextEditor.js'); ?>
 

@@ -75,7 +75,13 @@
 	    	
 	    	$('#confirm-message').text(message);
 			//use .data to pass data (to prevent weird binding or parameter).
-	    	$('#confirm').data('data', data).dialog('open');				
+	    	
+			
+			if (typeof data != 'undefined') {
+				$('#confirm').data('data', data);
+			}
+			
+			$('#confirm').dialog('open');				
 	    };    	   
 	
     $.fn.nextElementInDom = function(selector, options) {

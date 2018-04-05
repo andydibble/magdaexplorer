@@ -21,15 +21,6 @@
 	</div>
 </div>
 <script type="text/javascript">
-	if ($.browser.msie) {
-		userAgent = $.browser.version;
-		userAgent = userAgent.substring(0, userAgent.indexOf('.'));
-		version = userAgent;
-		if (version == '7') {
-			$.alert('You are using a version of Internet Explorer that is not fully compatible with this site.');
-		}
-	}
-
 	jQuery(document).ready(function () {
 		jQuery(".hidden-content").hide();
 

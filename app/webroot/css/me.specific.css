@@ -271,19 +271,42 @@ form input.added-by-admin {
 
 #header-search {
     float:right;
-    max-width:18%;
+    max-width:40%;
     margin-right:0px;
+	margin-top:15px
+}
+#header-search div.submit {
+    padding:0;
+	margin:0;
+	margin-left: -10%;
+    width: 10%;
+    border: 0;
+    -webkit-appearance: none;   
+	height: 30px;
+    background: url(images/search.png) no-repeat;
+	display:inline-block;
+	
 }
 
 #header-search div.input {
-    width:100%;
-}
+	padding:0;
+	margin:0;
+    padding-right: 10%;
+    width: 76%;
+    display: inline-block;
+    clear: none;
+    height: 20px;
+	-webkit-appearance: none;   
+}	
 
-#header-search div.submit {
-    margin-top:0px;
-    float:right;
-    position:absolute;
-    right:-20px;
+#header-search div.input input[type="text"] {	
+    padding-right: 10%;    
+}	
+
+#header-search input[type="submit"] {   
+	-webkit-appearance: none;   
+	background:none;
+	border:0
 }
 
 /** Adventure Digest Styles **/

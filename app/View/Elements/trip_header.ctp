@@ -1,13 +1,6 @@
 <?php echo $this->Html->script('TripHeader.js'); ?>
 
-<div id="trip-header">		
-	
-	<?php if($isAdmin && $location && ($location['is_dummy_location'] || $type=='Location')): ?>
-	<div class="actions" id="set-homepage-button">
-		<?php echo $this->Html->link('Set as Homepage', '/locations/setAsHomepage/'.$location['id']); ?>
-	</div> 
-	<?php endif; ?>
-						
+<div id="trip-header">								
 	<div class="section-header-wrapper">
 		<div class="section-header">
 			<div class="section-header-title"><?php 
@@ -24,13 +17,16 @@
 			</div>
 			<div class="actions trip-header-buttons">
 			<?php 
-				if($isAdmin):								
+				if($isAdmin):			
+					if($location && ($location['is_dummy_location'] || $type=='Location')):
+						echo $this->Html->link('Set as Homepage', '/locations/setAsHomepage/'.$location['id']);
+					endif;				
 					if($type == 'Location'): 
 						echo $this->Html->link('Edit', '/locations/edit/'.$id);
 						echo $this->Html->link('Create Trip', '/trips/add/'.$location['id']);
 						echo $this->Html->link('Create Adeventure', '/adventures/add/'.$createAdvForTripId);
 						
-						
+					
 					else:
 						echo $this->Html->link('Edit', '/trips/edit/'.$id);
 						echo $this->Html->link('Create Adeventure', '/adventures/add/'.$id);

@@ -30,12 +30,7 @@
 					<table style="background: #eee; color: #333; width: 100%;">
 						<tbody>
 							<tr>
-								<td	style="width: 40%; font-family:adobe-garamond-pro-1, adobe-garamond-pro-2, 'Times New Roman', Times, serif;">
-									<?php ECHO !empty($title) ? $title : Configure::read('APP_NAME')." Notification"; ?>
-								</td>
-								<td	style="width: 40%; text-align: right; font-family:adobe-garamond-pro-1, adobe-garamond-pro-2, 'Times New Roman', Times, serif;">
-									<?php echo $this->Html->link('Login', Router::url('/pages/login', true), array('style' => 'color:#333')); ?>
-								</td>
+								<td align="left" style="width: 150px"><?php echo $this->Html->image('layout/logo.png', array('style' => 'width:145px; margin-top:10px', 'fullBase' => true))?>																										
 							</tr>
 						</tbody>
 					</table>
@@ -50,12 +45,16 @@
 						<table style="width: 100%;">
 							<tbody>
 								<tr>									
-									<td align="center" style="width: 150px"><?php echo $this->Html->image('layout/logo.png', array('style' => 'width:145px; margin-top:10px', 'fullBase' => true))?>																		
+									<div style="text-align: center; margin-top: 15px; color: #333; font-family:adobe-garamond-pro-1, adobe-garamond-pro-2, 'Times New Roman', Times, serif;">
+										
+										<?php echo "Magda Explorer" ?>
+									</div>
 								</tr>
 								<tr>
 									<td align="center">
-										<div style="text-align: center; margin-top: 15px; color: #333; font-family:adobe-garamond-pro-1, adobe-garamond-pro-2, 'Times New Roman', Times, serif;">
-											<?php echo $this->Html->link('Unsubscribe', Router::url('/knownEmails/unsubscribe?email='.urlencode($email), true), array('style' => 'color:#333; font-size:12px; text-align:center'))?>
+										<div style="text-align: center; margin-top: 15px; color: #333; font-family:adobe-garamond-pro-1, adobe-garamond-pro-2, 'Times New Roman', Times, serif;">											
+											<?php $queryString = "email=".urlencode(Security::rijndael($email,Configure::read('Security.key'),'encrypt')); ?>
+											<?php echo $this->Html->link('Unsubscribe', Router::url('/knownEmails/unsubscribe?'.$queryString, true), array('style' => 'color:#333; font-size:12px; text-align:center'))?>
 										</div>
 									</td>
 								</tr>

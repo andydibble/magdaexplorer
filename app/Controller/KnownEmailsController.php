@@ -47,7 +47,7 @@ class KnownEmailsController extends AppController {
 	 * if $isConfirm is true, then this page is used as final confirm of recipient list before sending of email
 	 * @param unknown_type $isConfirm
 	 */
-	function edit() {
+	function edit() {		
 		$sendData = $this->request->params['named'];
 		
 		if (isset($sendData['model']) && isset($sendData['id'])) {
@@ -234,9 +234,22 @@ class KnownEmailsController extends AppController {
 		return json_encode(array('success' => $success));
 	}
 
-	function unsubscribe() {
-		if ($email = $this->request->query['email']) {
+	function unsubscribe() {						
+				
+		$email = Security::rijndael(urldecode($this->request->query['email']),Configure::read('Security.key'),'decrypt');				
+		if ($email) {			
 			if($this->KnownEmail->deleteAll(array('email' => urldecode($email)))) {
+				
+				$this->Email->to = Configure::read('MAGDA_MALAK_EMAIL');
+				$this->Email->sendAs = 'html';
+				$this->Email->from = Configure::read('CONTACT_EMAIL');
+				
+				$emailFields = array('unsubscriberEmail' => $email);
+				
+				list($body, $this->Email->subject) = $this->EmailText->constructEmail('unsubscribe_notification', $emailFields);
+
+				$this->Email->send($body,false);
+							
 				$this->Session->setFlash('Your email has been deleted from our database.');
 			}
 		}

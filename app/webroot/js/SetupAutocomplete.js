@@ -3,20 +3,19 @@ $(function(){  	//setup autocomplete when page loads.
 	setupAutocomplete();	
 });
 
-function addressAutocomplete(selector) {		 		
-	/*if (typeof selector=='undefined') { 		
+function addressAutocomplete(selector) {			
+	if (typeof selector=='undefined') { 		
 		selector = 'textarea[name*=address]';
 	}	
-	$(selector).geo_autocomplete(new google.maps.Geocoder, {
-	        mapkey: 'ABQIAAAAbnvDoAoYOSW2iqoXiGTpYBTIx7cuHpcaq3fYV4NM0BaZl8OxDxS9pQpgJkMv0RxjVl6cDGhDNERjaQ',
-	        selectFirst: false,
-	        minChars: 3,
-	        cacheLength: 50,
-	        width: 300,
-	        scroll: true,
-	        scrollHeight: 330
-	    }).result(function (_event, _data) {		       
-    });*/
+	
+	let params = {			
+			types: ["geocode"]
+		}
+		
+	
+	$(selector).each(function(i,v) {
+		let autocomplete = new google.maps.places.Autocomplete(v,params);
+	});	
 }
 
 function setupAutocomplete($models) {
