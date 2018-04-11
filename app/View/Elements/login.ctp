@@ -1,3 +1,4 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div id="login-content" class="center">
 	<img id="main-logo"
 	     src="<?php echo Configure::read('PHOTO_PATH_PREFIX') . Configure::read('WEBROOT') . 'img/layout/logo.png' ?>"/>
@@ -17,6 +18,7 @@
 		<?php echo $this->Form->create('KnownEmail', array('action' => 'sign_up', 'class' => 'center')); ?>
 		<?php echo $this->Form->input('email', array('label' => null)); ?>
 		<?php echo $this->Form->input('send_updates', array('type' => 'hidden', 'default' => 0)); ?>
+		<div class="g-recaptcha" data-sitekey="6LdSklIUAAAAADvrkn6O28wH0-64fdb_J2Eubg-B"></div>
 		<?php echo $this->Form->end('Submit'); ?>
 	</div>
 </div>
@@ -36,6 +38,18 @@
 			emailField.val('');
 			emailField.attr('class', 'focused-field');
 			emailField.off('focus');
+		});
+		
+		$('#KnownEmailSignUpForm').submit(function(ev) {						
+			ev.preventDefault();
+			$.ajax({
+			  type: "POST",
+			  url:$(this).attr('action'),
+			  data: $(this).serialize(),
+			  success: function(result) {
+				  console.log(result);
+			  },			 
+			});
 		});
 	});
 </script>

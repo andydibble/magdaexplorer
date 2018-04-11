@@ -1,4 +1,5 @@
 <?php
+App::uses('HttpSocket', 'Network/Http');
 class KnownEmailsController extends AppController {
 
 	var $uses = array('Adventure', 'Article', 'KnownEmail', 'Text', 'EmailText');
@@ -103,35 +104,59 @@ class KnownEmailsController extends AppController {
 	 * If updates are not requested, assumes the password should be sent to the user.
 	 */
 	function sign_up() {
-		if($email = $this->data['KnownEmail']['email']) {
-			$record = $this->data;
-			$curEmail = $this->KnownEmail->find('first', array('conditions' => array('email' => $email)));
-			if ($curEmail) {
-				$emailId = $curEmail['KnownEmail']['id'];
-				$record['KnownEmail']['id'] = $emailId;
-				unset($record['KnownEmail']['email']);
-			}
-				
-			$isAskingForUpdates = $record['KnownEmail']['send_updates'];
-				
-			if ($curEmail['KnownEmail']['send_updates']) {	//prevent un-signing people up if they re-ask for the password.
-				$record['KnownEmail']['send_updates'] = 1;
-			}
-			if ($this->KnownEmail->save($record)) {
-				$emailId = $this->Email->id;
-				if ($isAskingForUpdates == 1) {
-					$this->Session->setFlash("Thank you.  You will now receive updates on Magda's Adventures.");
-				} else {
-					$this->sendPassword($email);
-					$this->Session->setFlash("Please check your email for the password to Magda Explorer.");
+		if($email = $this->data['KnownEmail']['email']) {			
+			if ($this->validateCaptcha($this->data['g-recaptcha-response'])) {
+				pr('valid');
+				return;
+				$record = $this->data;
+				$curEmail = $this->KnownEmail->find('first', array('conditions' => array('email' => $email)));
+				if ($curEmail) {
+					$emailId = $curEmail['KnownEmail']['id'];
+					$record['KnownEmail']['id'] = $emailId;
+					unset($record['KnownEmail']['email']);
 				}
-			} else {
-				$this->Session->setFlash($this->KnownEmail->validationErrors['email'][0]);
+					
+				$isAskingForUpdates = $record['KnownEmail']['send_updates'];
+					
+				if ($curEmail['KnownEmail']['send_updates']) {	//prevent un-signing people up if they re-ask for the password.
+					$record['KnownEmail']['send_updates'] = 1;
+				}
+				if ($this->KnownEmail->save($record)) {
+					$emailId = $this->Email->id;
+					if ($isAskingForUpdates == 1) {
+						$this->Session->setFlash("Thank you.  You will now receive updates on Magda's Adventures.");
+					} else {
+						$this->sendPassword($email);
+						$this->Session->setFlash("Please check your email for the password to Magda Explorer.");
+					}
+				} else {
+					$this->Session->setFlash($this->KnownEmail->validationErrors['email'][0]);
+				}
+			} else {	//captcha failed.
+				
 			}
 		}
 
 
 		$this->redirect($this->referer());
+	}
+	
+	private function validateCaptcha($gCaptchaResponse) {		
+		$HttpSocket = new HttpSocket();		
+
+		// array data
+		$data = array(
+			'secret' => Configure::read('Security.recaptchaSecret'),
+			'response' => $gCaptchaResponse,
+			'remoteip' => $this->request->clientIp()
+		);		
+		$results = $HttpSocket->post(
+			'https://www.google.com/recaptcha/api/siteverify',
+			$data
+		);
+		
+		$results=json_decode($results,true);	
+		return $results['success']==1;			
 	}
 
 	/**
