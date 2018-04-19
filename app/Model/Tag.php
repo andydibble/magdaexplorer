@@ -164,7 +164,7 @@ class Tag extends AppModel
 	function findTagsByTripId($tripId, $findType = 'list')
 	{
 
-		$tripTagIds = $this->Adventure->query('SELECT `AdventuresTag`.`tag_id` FROM `adventures` AS `Adventure` JOIN `adventures_tags` AS `AdventuresTag` ON (`AdventuresTag`.`adventure_id` = `Adventure`.`id`) WHERE `Adventure`.`trip_id` = ' . $tripId);
+		$tripTagIds = $this->Adventure->query('SELECT `AdventuresTag`.`tag_id` FROM `adventures` AS `Adventure` JOIN `adventures_tags` AS `AdventuresTag` ON (`AdventuresTag`.`adventure_id` = `Adventure`.`id`) JOIN `tags` AS `Tag` ON (`AdventuresTag`.`tag_id` = `Tag`.`id`) WHERE `Adventure`.`trip_id` = ' . $tripId . ' ORDER BY `Tag`.`name` DESC');
 		$tripTagIds = Set::extract('/AdventuresTag/tag_id', $tripTagIds);
 
 		$tags = $this->find($findType, array(

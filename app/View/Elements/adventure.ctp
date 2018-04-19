@@ -1,4 +1,6 @@
-	<?php $advId = $adv['Adventure']['id']?>
+	<?php 					
+	$advId = $adv['Adventure']['id']?>
+		
 	<div class="adv" id="adv<?php echo $advId ?>">									
 		<div class="adv-city adv-field"><?php echo $adv['Adventure']['city']?></div>	
 		<div class="adv-title adv-field"><?php echo $adv['Adventure']['title']?> 
@@ -39,15 +41,20 @@
 		</div>
 		
 		<?php if(!empty($adv['Tag'])): ?>
+		<?php usort($adv['Tag'], function ($item1, $item2) {		
+				if ($item1['name'] == $item2['name']) return 0;
+				return $item1['name'] < $item2['name'] ? -1 : 1;
+			});	?>
+		
 		<div class="tags">
-		<b>Tags:</b>
+		<b>Tags:</b>				
 		<?php foreach($adv['Tag'] as $tag): ?>		
 		<?php echo $this->Html->link($tag['name'], '/trips/index/'.$tripId.'/tag'.$tag['id'])?>
 		<?php endforeach;?>		
 		</div>
 		<?php endif; ?>
 				
-		<div class="adv-actions">
+		<div class="adv-actions col-12">
 			<div id="comments-toggler<?php echo $advId ?>" class="actions hidden-content-toggler">
 				<a>Leave Comment</a>								
 			</div>

@@ -33,12 +33,7 @@
 
 <?php if ($displayLoc): //trip details are below banner if location details are present to be above the banner ?>
 	<div id="sub-banner-expandable-elements">
-		<div class="expandable-page-elements">
-			<div id="trunks-img-container" class="page-element-parent">
-				<img
-					src="<?php echo Configure::read('PHOTO_PATH_PREFIX') . Configure::read('WEBROOT') . 'img/layout/trunks.jpg' ?>"/>
-			</div>
-
+		<div class="expandable-page-elements">			
 			<div class="page-element-parent right-side-page-element" id="trip-header-parent">
 				<?php echo $this->Element('trip_header', array(
 					'name' => $tripDisplayName,

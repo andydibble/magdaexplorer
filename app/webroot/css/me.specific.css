@@ -59,20 +59,6 @@ form input.added-by-admin {
 	float: left;
 }
 
-/** Login Page */
-#login-content {
-	width: 500px;
-	text-align: center;
-}
-
-#main-logo {
-	width: 500px;
-}
-
-#need-password {
-	left-margin: auto;
-	right-margin: auto;
-}
 
 /** Header **/
 #header {
@@ -133,11 +119,6 @@ form input.added-by-admin {
 	color: #fff;
 }
 
-#clear-search {
-	float: right;
-	width: 100px;
-	clear: none;
-}
 
 #last-logon-location {
 	width: 15%;
@@ -214,8 +195,7 @@ form input.added-by-admin {
 
 #trip-selection-parent select {
 	margin-top: 10px;
-	margin-left: 20px;
-	width: 155px;
+	margin-left: 20px;	
 }
 
 .border-box {
@@ -261,7 +241,7 @@ form input.added-by-admin {
 }
 
 #poll-resp-div {
-	width: 960px;
+	width: 100%;
 }
 
 .poll-resps {
@@ -407,12 +387,9 @@ form input.added-by-admin {
 }
 
 .photo-dialog-titlebar-button {
-	color: #666;
-	border: 1px solid #666;
-	padding: 1px 8px 4px 8px;
-	float: left;
-	width: 10px;
-	height: 20px;
+	color: #aaa;
+	border: 1px solid #aaa;
+	padding: 1px 8px 4px 8px;	
 	margin: 0px 10px 5px 0px;
 }
 
@@ -678,8 +655,7 @@ div.tags b {
 	font-size: 85%;
 }
 
-.adv-story {
-	width: 400px;
+.adv-story {	
 	float: left;
 	clear: none;
 	margin-bottom: 20px;
@@ -691,8 +667,7 @@ div.tags b {
 	background: #444;
 }
 
-.main-adv-pane img,div.adv-photo {
-	width: 250px;
+.main-adv-pane img,div.adv-photo {	
 	float: right;
 	max-width: 250px;
 	clear: right;
@@ -804,7 +779,7 @@ div.header-background-thumbnail { /*height: 100px;*/
 }
 
 #header-background-img-crop-area {
-	width: 960px;
+	/*width: 960px;*/
 	height: 166px;
 	position: absolute;
 	z-index: 100;
@@ -816,7 +791,7 @@ div.header-background-thumbnail { /*height: 100px;*/
 }
 
 #header-background-img {
-	width: 960px;
+	/*width: 960px;*/
 }
 
 div.expLeft {
@@ -847,9 +822,7 @@ div.expRight {
 }
 
 .comments {
-	clear: both;
-	width: 723px;
-	min-wdith: 618px;
+	clear: both;	
 	margin-top: 20px;
 }
 
@@ -938,7 +911,7 @@ body,.body {
 
 /** containers **/
 #content,#header,#content-parent {
-	width: 960px;
+	/*width: 960px;*/
 	/*padding: 10px 0%;*/
 	clear: none;
 	color: #333;
@@ -1026,3 +999,11 @@ body,.body {
 }
 
 
+/* Login*/
+#LoginLoginForm div.submit input, #LoginLoginForm label[for='LoginPassword'] {
+	margin-right:auto;
+	margin-left:auto;
+	display:block;
+}
+
+	

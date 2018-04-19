@@ -24,7 +24,8 @@ class AdventuresTag extends AppModel {
 	public function findAllAdvTags() {
 		$tags = $this->find('all', array(
 				'contain' => array('Tag'),
-				'fields' => array()
+				'fields' => array(),
+				'order' => 'Tag.name'
 			));
 		
 		$names = Set::extract($tags, '/Tag/name');							

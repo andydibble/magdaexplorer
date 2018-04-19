@@ -11,7 +11,7 @@
 							'action' => "index/{$adv['Adventure']['trip_id']}".Utility::toAdventure($adv['Adventure']['id']), 
 							'full_base' => true)	
 				);?>
-				<div>Please visit <?php echo $meLink ?> to Like this adventure or comment upon it.</div>
+				<div>Please visit <?php echo $meLink ?> to Like this adventure or comment upon it.  Reminder: the password is <?php echo Configure::read('PASSWORD'); ?>.</div>
 				
 				<div>
 					<?php echo $adv['Adventure']['city']?>
