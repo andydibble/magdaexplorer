@@ -113,8 +113,7 @@ white-space: normal;
 	line-height: 20px;
 }
 
-.actions,.page-actions {
-	float: left;
+.actions,.page-actions {	
 	padding: 10px 1.5%;
 }
 
@@ -141,6 +140,7 @@ div.left-side {
 * {
 	margin: 0;
 	padding: 0;
+	text-align:left;
 }
 
 html,#container,#content {
@@ -359,7 +359,7 @@ dd {
 form {
 	margin-right: 20px;
 	padding: 0;
-	width: 95%;
+	/*width: 95%;*/
 }
 
 fieldset {
@@ -932,5 +932,11 @@ pre {
 	display: none;
 }
 
-
+/** Disabled **/ 
+button:disabled,
+button[disabled], input[disabled] {
+  border: 1px solid #999999 ;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+}
 

@@ -20,7 +20,7 @@
  */
 
 App::uses('AppController', 'Controller');
-
+App::uses('HttpSocket', 'Network/Http');
 /**
  * Static content controller
  *
@@ -29,7 +29,7 @@ App::uses('AppController', 'Controller');
  * @package       app.Controller
  * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
-class PagesController extends AppController {
+class PagesController extends AppController {		
 
 	public $uses = array('Login', 'Text');
 	/**
@@ -48,7 +48,7 @@ class PagesController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login');
+		$this->Auth->allow('login','verifyHumanity');
 	}
 
 
@@ -130,5 +130,26 @@ class PagesController extends AppController {
 		$this->Auth->logout();
 		$this->Session->destroy();
 		$this->redirect('/pages/login');
+	}
+	
+	public function verifyHumanity() {		
+		
+		$gCaptchaResponse = $this->data['g-recaptcha-response'];
+		$HttpSocket = new HttpSocket();		
+
+		// array data
+		$data = array(
+			'secret' => Configure::read('Security.recaptchaSecret'),
+			'response' => $gCaptchaResponse,
+			'remoteip' => $this->request->clientIp()
+		);		
+		$results = $HttpSocket->post(
+			'https://www.google.com/recaptcha/api/siteverify',
+			$data
+		);
+		
+		$results=json_decode($results,true);	
+		$this->Session->write("HUMANITY_VERIFIED",$results['success']==1);	
+		return $results['success']==1;			
 	}
 }

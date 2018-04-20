@@ -86,8 +86,7 @@ form input.added-by-admin {
 	width: 1027px;
 }
 
-#header-row-1 {
-	width: 100%;
+#header-row-1 {	
 	height: 110px;
 }
 
@@ -97,9 +96,6 @@ form input.added-by-admin {
 }
 
 #modern-day-exploring {
-	width: 15%;
-	float: left;
-	clear: none;
 	background: black;
 	font-size: 32px;
 	line-height: 35px;
@@ -107,12 +103,7 @@ form input.added-by-admin {
 }
 
 #open-field {
-	height: 40%;
-	width: 60%;
-	float: left;
-	clear: none;
-	margin-left: 20px;
-	margin-top: 10px;
+	margin-left:2%;
 	background: black;
 	font-size: 32px;
 	line-height: 35px;
@@ -250,8 +241,7 @@ form input.added-by-admin {
 }
 
 #header-search {
-    float:right;
-    max-width:40%;
+    float:right;    
     margin-right:0px;
 	margin-top:15px
 }
@@ -271,8 +261,7 @@ form input.added-by-admin {
 #header-search div.input {
 	padding:0;
 	margin:0;
-    padding-right: 10%;
-    width: 76%;
+    padding-right: 10%;    
     display: inline-block;
     clear: none;
     height: 20px;

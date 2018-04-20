@@ -1,5 +1,4 @@
 <?php
-App::uses('HttpSocket', 'Network/Http');
 class KnownEmailsController extends AppController {
 
 	var $uses = array('Adventure', 'Article', 'KnownEmail', 'Text', 'EmailText');
@@ -105,9 +104,7 @@ class KnownEmailsController extends AppController {
 	 */
 	function sign_up() {
 		if($email = $this->data['KnownEmail']['email']) {			
-			if ($this->validateCaptcha($this->data['g-recaptcha-response'])) {
-				pr('valid');
-				return;
+			if ($this->Session->read("HUMANITY_VERIFIED") == true) {				
 				$record = $this->data;
 				$curEmail = $this->KnownEmail->find('first', array('conditions' => array('email' => $email)));
 				if ($curEmail) {
@@ -139,24 +136,6 @@ class KnownEmailsController extends AppController {
 
 
 		$this->redirect($this->referer());
-	}
-	
-	private function validateCaptcha($gCaptchaResponse) {		
-		$HttpSocket = new HttpSocket();		
-
-		// array data
-		$data = array(
-			'secret' => Configure::read('Security.recaptchaSecret'),
-			'response' => $gCaptchaResponse,
-			'remoteip' => $this->request->clientIp()
-		);		
-		$results = $HttpSocket->post(
-			'https://www.google.com/recaptcha/api/siteverify',
-			$data
-		);
-		
-		$results=json_decode($results,true);	
-		return $results['success']==1;			
 	}
 
 	/**

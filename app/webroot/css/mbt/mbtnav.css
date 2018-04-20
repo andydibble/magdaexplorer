@@ -66,14 +66,16 @@
     height: auto;
     margin: 0;
     padding: 0;
+	width:100%;
 }
 
 .mbtnav li ul li {
     clear: both;
+	width:100%;
 }
 
 .mbtnav li ul a {
-    /*width: 140px;*/
+    text-align:center;
 }
 
 .mbtnav li ul ul {
@@ -93,8 +95,7 @@
 }
 
 .mbtnav li li a, .mbtnav li li a:link, .mbtnav li li a:visited {
-    background: #ededed;
-    width: 140px;
+    background: #ededed;  
     color: #44;
     display: block;
     margin: 0;
@@ -148,9 +149,6 @@
 /* first level */
 
 #nav > ul > li {
-    /*width: 25%;*/
-    height: 100%;
-    float: left;
 }
 
 /* second level */

@@ -1,4 +1,9 @@
 (function( $ ) {
+	$.fn.isValidEmailAddress = function(message) {    	
+		var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		return pattern.test($(this).val());
+	};       	            
+	
 	$.alert = function(message) {
     	if ($('#alert').length == 0) {
     		$('#container').append('<div id="alert"><p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span><span id="alert-message"></span></p></div>');
@@ -128,6 +133,10 @@
 
 	$.fn.toString = function(selector) {		
 		return $('<div>').append(this).clone().html();
+	};
+	
+	$.fn.disable = function() {		
+		$(this).attr('disabled','disabled').addClass('disabled');
 	};
 	
 	$.reenableSubmits = function() {

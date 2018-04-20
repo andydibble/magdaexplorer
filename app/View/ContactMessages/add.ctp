@@ -12,12 +12,6 @@
 </div>
 <br />
 
-<!-- 
-<div class="form-entry-set">
-	<label><i>If this is regarding a vacation service request,</i> please disclose its <strong>Confirmation Id</strong>, if you know it:</label>
-	<?php //echo $this->Form->input('Request.confirmation_id', array('type' => 'text', 'maxLength' => 6, 'label' => 'Confirmation Id')); ?>	
-</div>
--->
 
 
 <div class="">
@@ -30,15 +24,6 @@ echo $this->Form->end(); ?>
 
 <?php if(!empty($auth['User']['id'])): ?> 
 <script type="text/javascript">
-
-/*$(document).ready(function() {
-	$('input[type!=submit]').attr('disabled', 'disabled');
-	//just-in-time reenable so that the data get passed back.
-	$('#KnownEmailAddForm').submit(function() {
-		$('input[type!=submit]').attr('disabled', false);		
-	});
-	
-});*/
 
 </script>
 <?php endif; ?>

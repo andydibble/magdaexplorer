@@ -1,8 +1,8 @@
 <?php $displayLoc = isset($location) && !$location['is_dummy_location'] ?>
 
 <div id="above-banner-expandable-elements">
-	<div class="expandable-page-elements">
-		<div class="page-element-parent" id="check-in-location-map-parent">
+	<div class="expandable-page-elements row">
+		<div class="page-element-parent no-mobile col-3" id="check-in-location-map-parent">
 			<div id="check-in-location-map"></div>
 		</div>
 
@@ -34,7 +34,7 @@
 <?php if ($displayLoc): //trip details are below banner if location details are present to be above the banner ?>
 	<div id="sub-banner-expandable-elements">
 		<div class="expandable-page-elements">			
-			<div class="page-element-parent right-side-page-element" id="trip-header-parent">
+			<div class="page-element-parent right-side-page-element col-8" id="trip-header-parent">
 				<?php echo $this->Element('trip_header', array(
 					'name' => $tripDisplayName,
 					'title' => 'Trip Details',

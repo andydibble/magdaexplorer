@@ -48,6 +48,7 @@
 	echo $this->Html->css('twm.specific');
 	echo $this->Html->css('grid.css');
 	echo $this->Html->css('jquery.ui/jquery-ui-1.10.1.custom.min');
+		
 
 	echo $this->Html->css('mbt/mbtnav');
 
@@ -58,8 +59,7 @@
 	//--start scripts--//
 	echo $this->Html->script('jquery/jquery-1.7.1.js');
 	echo $this->Html->script('jquery/utility.js');
-	echo $this->Html->script('jquery/jquery.simpleWeather.min.js');	
-
+	
 	if (!empty($isAdmin) && $isAdmin):		
 		echo $this->Html->script('SetupAutocomplete.js');
 		?>
@@ -105,9 +105,11 @@
 
 	</script>
 
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
 	<?php
 	echo $this->fetch('meta');
 	echo $this->fetch('css');
+	
 	echo $this->fetch('script');
 	?>
 

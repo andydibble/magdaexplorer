@@ -8,34 +8,51 @@
 	<div class="col-5">
 		<?php
 		echo $this->Session->flash('auth');
-		echo $this->Form->create('Login', array('class' => 'center'));
+		echo $this->Form->create('Login');
 		echo $this->Form->input('password', array('type' => 'text'));
-		echo $this->Form->end('Login');
+		echo $this->Form->submit(
+			'Login', 
+				array('div' => array('submit class' => 'center')));
+		echo $this->Form->end();			
 		?>
 	</div>	
 	<div class="col-5 no-required right">			
-			<?php echo $this->Form->create('KnownEmail', array('action' => 'sign_up', 'class' => 'center')); ?>
+			<?php echo $this->Form->create('KnownEmail', array('action' => 'sign_up')); ?>
 			<?php echo $this->Form->input('email', array('placeholder' => "Enter Email", 'label' => 'Need Password?')); ?>
-			<?php echo $this->Form->input('send_updates', array('label' => "Send updates about Magda's adventures", 'type' => 'checkbox', 'default' => 0)); ?>
-			<div class="g-recaptcha" data-sitekey="6LdSklIUAAAAADvrkn6O28wH0-64fdb_J2Eubg-B"></div>
-			<?php echo $this->Form->end('Submit'); ?>
+			<?php echo $this->Form->input('send_updates', array('label' => "Receive updates about Magda's adventures?", 'type' => 'checkbox', 'default' => 0)); ?>
+			<div class="g-recaptcha" data-sitekey="6LdSklIUAAAAADvrkn6O28wH0-64fdb_J2Eubg-B" data-callback="verifyHumanity"></div>
+			<?php echo $this->Form->submit(
+			'Submit', 
+				array('class' => 'disabled', 
+				'disabled' => true,
+				'div' => array('class' => 'submit center')));
+			echo $this->Form->end();?>
 		
 	</div>
 </div>
 <script type="text/javascript">
-	jQuery(document).ready(function () {			
-		$('#KnownEmailSignUpForm').submit(function(ev) {						
-			ev.preventDefault();
-			$.ajax({
-			  type: "POST",
-			  url:$(this).attr('action'),
-			  data: $(this).serialize(),
-			  success: function(result) {
-				  console.log(result);
-			  },			 
-			});
-		});
+	$(document).ready(function () {							
+		$("#KnownEmailEmail").change(enableBtn);
 	});
+	
+	function verifyHumanity() {			
+		$.ajax({
+		  type: "POST",
+		  url:"../pages/verifyHumanity",
+		  data: {"g-recaptcha-response" : $('#g-recaptcha-response').val()},
+		  success: function(result) {
+			  enableBtn();
+		  },			 
+		});
+	}
+	
+	
+	function enableBtn() {		
+		if ($('#g-recaptcha-response').val().length > 0 && $('#KnownEmailEmail').isValidEmailAddress()) {		
+			$.reenableSubmits();
+		}
+	}
+	
 </script>
 
 

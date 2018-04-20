@@ -10,7 +10,7 @@ var tripId = <?php echo $tripId; ?>
 			<div id="photo-dialog-advance" class="photo-dialog-titlebar-button rounded-field col-2">&gt;</div>							
 		</div>
 		<div class="row">
-			<div id="photo-dialog-like-button col-3" class="actions">
+			<div id="photo-dialog-like-button" class="actions col-3">
 				<a>Like</a>
 				<span id="likes-display-parent">
 					<span class="likes-display rounded-field"></span>

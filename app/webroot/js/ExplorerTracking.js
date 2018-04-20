@@ -98,15 +98,15 @@ function codeLatLng(lat, lng, callBack) {
 
 //get temperature script.
 function setLocalTemp(explorerLoc) {
-    curLoc = 'Boston, MA';  //default location
+    /*curLoc = 'Boston, MA';  //default location
     if (city = explorerLoc.city) {
         curLoc = city;
         if (country = explorerLoc.country) {
             curLoc = city + ', ' + country;
         }
-    }
-    curLoc = curLoc.replace(/^\s\s*/, '').replace(/\s\s*$/, '');	//trim
-	console.log(curLoc);
+    }*/
+    //curLoc = curLoc.replace(/^\s\s*/, '').replace(/\s\s*$/, '');	//trim
+	/*console.log(curLoc);
     $.simpleWeather({
         location: 'Stoughton, Wisconsin',
         unit: 'f',
@@ -119,6 +119,6 @@ function setLocalTemp(explorerLoc) {
         error: function (error) {
             $("#weather").html('<p>' + error + '</p>');
         }
-    });
+    });*/
 }
 
