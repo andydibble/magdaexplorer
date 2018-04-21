@@ -202,9 +202,7 @@ form input.added-by-admin {
 
 /** Poll and Message Styles **/
 #poll { /*width: 50%;*/
-	width: 71.5%;
 }
-
 #poll-desc {
 	width: 100%;
 }
@@ -235,11 +233,9 @@ form input.added-by-admin {
 	width: 100%;
 }
 
-.poll-resps {
-	width: 444px;
-	float: left;
+#poll-header .hidden-content {
+	overflow:inherit !important;
 }
-
 #header-search {
     float:right;    
     margin-right:0px;
@@ -380,6 +376,7 @@ form input.added-by-admin {
 	border: 1px solid #aaa;
 	padding: 1px 8px 4px 8px;	
 	margin: 0px 10px 5px 0px;
+	text-align:center
 }
 
 #photo-dialog-titlebar-close {
@@ -435,10 +432,6 @@ form input.added-by-admin {
 	margin-top: 25px;
 }
 
-#main-content {
-	width: 72.5%;
-	float: right;
-}
 
 #message-pane {
 	width: 100%;
@@ -536,15 +529,11 @@ form input.added-by-admin {
 }
 
 .right-side-page-element { /*width: 46.5%;*/
-	width: 71.5%;
-	clear: right;
-	float: right;
+
 }
 
 .left-side-page-element {
-	width: 46.5%;
-	clear: left;
-	float: left;
+
 }
 
 .section-header-wrapper {
@@ -563,8 +552,7 @@ form input.added-by-admin {
 .section-header {
 	float: left;
 	clear: none;
-	font-weight: bold;
-	width: 95%;
+	font-weight: bold;	
 }
 
 .section-header-title, .poll-prompt {
@@ -658,7 +646,7 @@ div.tags b {
 
 .main-adv-pane img,div.adv-photo {	
 	float: right;
-	max-width: 250px;
+	max-width: 100%;
 	clear: right;
 }
 
@@ -913,13 +901,6 @@ body,.body {
 	border-left: 3px solid #444;
 	border-bottom: 3px solid #444;
 	padding: 0px 2.7%
-}
-
-#sidebar {
-	float: left;
-	width: 25%;
-	clear: left;
-	margin-right: 10px;
 }
 
 #sidebar a {

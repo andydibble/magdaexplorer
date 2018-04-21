@@ -32,9 +32,9 @@
 <?php echo $this->Element('photo_banner'); ?>
 
 <?php if ($displayLoc): //trip details are below banner if location details are present to be above the banner ?>
-	<div id="sub-banner-expandable-elements">
-		<div class="expandable-page-elements">			
-			<div class="page-element-parent right-side-page-element col-8" id="trip-header-parent">
+	<div id="sub-banner-expandable-elements row">
+		<div class="expandable-page-elements col-12">			
+			<div class="page-element-parent right-side-page-element col-7" id="trip-header-parent">
 				<?php echo $this->Element('trip_header', array(
 					'name' => $tripDisplayName,
 					'title' => 'Trip Details',
@@ -45,7 +45,7 @@
 			</div>
 
 			<?php if (!empty($texts['poll_prompt'])): ?>
-				<div id="poll" class="page-element-parent right-side-page-element">
+				<div id="poll" class="page-element-parent right-side-page-element col-5">
 					<?php echo $this->Element('poll'); ?>
 				</div>
 			<?php endif; ?>
@@ -53,12 +53,12 @@
 	</div>
 <?php endif; ?>
 
-<div id="main-content-container">
+<div id="main-content-container" class="row">
 
 	<?php echo $this->Element('sidebar'); ?>
 
 
-	<div id="main-content">
+	<div id="main-content" class="col-9">
 
 		<?php foreach ($adventures as $adv): ?>
 			<?php echo $this->Element('adventure', array('adv' => $adv)) ?>

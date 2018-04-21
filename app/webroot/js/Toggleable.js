@@ -1,7 +1,13 @@
-$(document).ready(function() {	  		
+$(document).ready(function() {	  	
+	var isMobile = $(window).width() < 650;	
 	$(".hidden-content-toggler").click(function()
 	{	
-		var hiddenContent = $(this).nextElementInDom(".hidden-content, .hidden-content-defer-hide");
+		
+		if (isMobile) {
+			var hiddenContent = $(this).nextElementInDom(".mobile-hidden-content, .hidden-content, .hidden-content-defer-hide");
+		} else {
+			var hiddenContent = $(this).nextElementInDom(".hidden-content, .hidden-content-defer-hide");
+		}		
 				
 		if ($(hiddenContent).is(':visible')) {
 			if ($(this).is(':checked')) {
@@ -17,7 +23,10 @@ $(document).ready(function() {
 	});
 	
 	//set timeout so that content can fully render before it's hidden.
-	setTimeout(function() {$(".hidden-content").hide();}, 100);	
+	$(".hidden-content").hide();
+	if (isMobile) {
+		$(".mobile-hidden-content").hide();
+	}
 	//$(".hidden-content").hide();	//only hide hidden content that does not have the -defer-hide class.
 });
 

@@ -31,3 +31,24 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+$(function() {
+$("[id^='PollResponseRespond'").submit(function(ev) {
+	ev.preventDefault();
+		$.ajax({
+		  type: "POST",
+		  url:$(this).attr('action'),
+		  data: $(this).serialize(),
+		  success: function(result) {
+			  $.reenableSubmits();
+			  $('#poll-resp-div ul').find('.empty-list-note').remove();
+			  $('#poll-resp-div ul').append('<li>'+result+'</li>');
+		  },			 
+		});
+	
+	
+}
+)});
+</script>

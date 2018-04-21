@@ -18,11 +18,11 @@
 		<div id="header-row-1" class="row">
 			<?php if (!empty($texts['square_header_field'])): ?>
 				<div id="modern-day-exploring"
-				     class="border-box rounded-field header-field col-2"><?php echo $texts['square_header_field'] ?></div>
+				     class="no-mobile border-box rounded-field header-field col-2"><?php echo $texts['square_header_field'] ?></div>
 			<?php endif; ?>
 			<?php if (!empty($texts['rectangle_header_field'])): ?>
 				<div id="open-field"
-				     class="border-box rounded-field header-field col-6"><?php echo $texts['rectangle_header_field']; ?></div>
+				     class="no-mobile border-box rounded-field header-field col-6"><?php echo $texts['rectangle_header_field']; ?></div>
 			<?php endif; ?>
 			
 			<div class="col-3 right">
@@ -71,11 +71,10 @@
 		</div>
 		<nav id="nav" class="actions trip-nav" role="navigation">
 			<!--<div class="container-fluid">-->
-			<!--<a href="#nav" title="Show navigation">Show navigation</a>
-			<a href="#" title="Hide navigation">Hide navigation</a>-->
-			<ul class="mbtnav row nav navbar-nav">
+			<a href="#nav" id="mobile-nav-toggle" class="col-12 hidden-content-toggler" title="Toggle Navigation">Toggle Navigation</a>		
+			<ul class="mbtnav row nav navbar-nav mobile-hidden-content">
 				<?php if ($isAdmin): ?>
-					<li><?php echo $this->Html->link('Create Location', '/locations/add') ?></li>
+					<li class="col-2"><?php echo $this->Html->link('Create Location', '/locations/add') ?></li>
 				<?php endif; ?>
 
 				<?php foreach ($locations as $i => $loc): ?>

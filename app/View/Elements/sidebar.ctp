@@ -1,4 +1,4 @@
-<div id="sidebar">	
+<div id="sidebar" class="no-mobile col-3">	
 	<?php echo $this->Element('navigation'); ?>
 	
 	<div id="instant-updates">								

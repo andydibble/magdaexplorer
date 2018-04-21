@@ -99,13 +99,8 @@ function openPhotoDialog(dialogImg, bannerImgInd) {
 
 	//set the width of the titlebar to coincide with that of the image
 	$(dialogImg).load(function() {
-		imgWidth = $(this).width();
-		var titlebar = $('#photo-dialog-titlebar');
-		//var borders = titlebar.css('border-right-width');				
-		$('#photo-dialog').css('maxWidth', imgWidth+10);
-		imgWidth -= 10;
-		titlebar.css('maxWidth',imgWidth);
-		
+		//imgWidth = $(this).width();
+		var titlebar = $('#photo-dialog-titlebar');				
 		updateDialogHeight();
 		
 	});

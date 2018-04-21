@@ -2,19 +2,17 @@
 class PollResponsesController extends AppController {
 	
 	function respond($tripId) {
-		if($this->data) {
+		if($this->data) {						
 			$response = $this->data;
 			$response['PollResponse']['trip_id'] = $tripId;
 			if($response['PollResponse']['value']) {	//only save non-empty responses.
-				if($this->PollResponse->save($response)) {
-					$this->Session->setFlash('Your response has been saved.');
-					$this->Session->write('LoadOpen', 'poll-toggler');		//open the poll drop down on next page load.								
+				if($this->PollResponse->save($response)) {										
 				} else {
 					$this->Session->setFlash('Your response could not be saved.  Please try again.');
 				}
 			}
-		}
-		$this->redirect('/trips/index/'.$tripId);
+		}		
+		return json_encode($this->data['PollResponse']['value']);
 	}
 	
 	public function edit($tripId) {
