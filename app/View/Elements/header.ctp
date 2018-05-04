@@ -1,18 +1,6 @@
 <!-- Header -->
 <?php if (isset($texts)):
-	echo $this->Html->script('Layout.js');
-	echo $this->Html->script('ExplorerTracking.js'); ?>
-
-	<script>
-		$(document).ready(function () {
-			<?php if(!empty($saveAdminLogin) && $saveAdminLogin): ?>
-			saveSubjectLogin();
-			<?php endif;?>
-
-			setLocalTemp(<?php echo $explorerLocInfo ?>);
-		});
-	</script>
-
+	echo $this->Html->script('Layout.js'); ?>
 	<div id="header" class="center" style="color:<?php echo $texts['header_text_color'] ?>">
 
 		<div id="header-row-1" class="row">
@@ -22,8 +10,9 @@
 			<?php endif; ?>
 			<?php if (!empty($texts['rectangle_header_field'])): ?>
 				<div id="open-field"
-				     class="no-mobile border-box rounded-field header-field col-6"><?php echo $texts['rectangle_header_field']; ?></div>
-			<?php endif; ?>
+				     class="no-mobile border-box rounded-field header-field col-6"><?php echo $texts['rectangle_header_field']; ?>														 
+					</div>
+			<?php endif; ?>						
 			
 			<div class="col-3 right">
 			<?php echo $this->Form->create('Adventure.', array(
@@ -50,11 +39,11 @@
 
 		</div>
 		<div id="header-row-2" class="row">
-			<div id="check-in-location" class="col-4">						
-				<div id="check-in-city" class="check-in-city header-field"><?php echo $texts['check_in_city_label'] ?><b
-						id="check-in-city-name"><?php echo $texts['check_in_city'] ?></b></div>
+			<div id="check-in-location" class="col-4">										
 				<div id="check-in-venue" class="header-field"><b id="check-in-venue-name"				                                                 class="check-in-venue-name"><?php echo $texts['check_in_venue'] ?></b>
 				</div>
+				<div id="check-in-city" class="check-in-city header-field"><?php echo $texts['check_in_city_label'] ?><b
+					id="check-in-city-name"><?php echo $texts['check_in_city'] ?></b></div>
 			</div>
 			<div id="local col-4" class="right">
 				<div id="local-left">

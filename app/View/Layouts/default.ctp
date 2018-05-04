@@ -39,6 +39,9 @@
 				display: none
 			}
 		}</style>
+	<script>
+	var GOOGLE_API_KEY="AIzaSyCdTgvWsM2hWoz-BEYMOo3FFjpxmRWPB_0";
+	</script>
 	<?php
 	echo $this->Html->meta('icon', $this->Html->url('/favicon.png'));
 
@@ -66,7 +69,7 @@
 
 		<?php echo $this->Html->script('https://maps.googleapis.com/maps/api/js?key=AIzaSyCdTgvWsM2hWoz-BEYMOo3FFjpxmRWPB_0&libraries=places', array('inline' => false)); ?>				
 		
-		<?php echo $this->Html->script('http://js.nicedit.com/nicEdit-latest.js', array('inline' => false)); ?>
+		<?php echo $this->Html->script('nicEdit/nicEdit.js', array('inline' => false)); ?>
 		<?php echo $this->Html->script('TextEditor.js'); ?>
 
 		<?php echo $this->Html->script('/JavaScriptSpellCheck/include.js'); ?>
@@ -114,11 +117,11 @@
 	?>
 
 </head>
-<body>
+<body class="<?php echo $this->request->controller."-controller"; ?>" >
 <div id="container" style="width:100%">
 
 	<?php echo $this->Element('header_background_image'); ?>
-	<div id="content-parent" class="center">
+	<div id="content-parent" class="center">		
 		<?php echo $this->Session->flash(); ?>
 
 		<?php if ($this->request['action'] !== 'login'): ?>

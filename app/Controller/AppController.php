@@ -103,13 +103,7 @@ class AppController extends Controller {
 		$isMobile = $this->RequestHandler->isMobile() ? 1 : 0;
 
 		$this->set(compact('isAdmin', 'isMobile'));
-	}
-
-
-	/*public function appError($method)
-	{
-		die('Application error: called handler method '.$method);
-	}*/
+	}	
 
 	//get trip list for navigation info on all pages.
 	public function beforeRender() {
@@ -168,13 +162,7 @@ class AppController extends Controller {
 		date_default_timezone_set($explorerLocInfo["Login"]['timezone']);
 		$localTime = date(Configure::read('DISP_TIME_FORMAT'), time());
 
-		$explorerLocInfo = json_encode($explorerLocInfo['Login']);
-
-		//for updating tracking information of explorer/administrator login
-		if ($this->Session->check('Login.isLoginSaved') && !$this->Session->read('Login.isLoginSaved')) {
-			$this->set('saveAdminLogin', 1);
-			$this->Session->write('Login.isLoginSaved', true);
-		}
+		$explorerLocInfo = json_encode($explorerLocInfo['Login']);		
 
 		$this->set(compact('explorerLocInfo', 'localTime'));
 	}
@@ -216,8 +204,8 @@ class AppController extends Controller {
 	 */
 	public function prepAjax() {
 		if ($this->RequestHandler->isAjax()) {
-			$this->autoRender = false;
-			//Configure::write('debug', 0);
+			$this->autoRender = false;		
+			//$layout = 'ajax'; // you need to have a no html page, only the data.			
 		}
 	}
 

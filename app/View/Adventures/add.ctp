@@ -8,7 +8,7 @@
 
 <?php echo $this->Form->input('is_visible', array('type' => 'checkbox', 'default' => 1)); ?>
 <?php echo $this->Form->input('title', array('div' => 'text-field')); ?>
-<?php echo $this->Form->input('story', array('type' => 'textarea', 'maxLengeth' => '10000', 'rows' => 10)); ?>
+<?php echo $this->Form->input('story', array('type' => 'textarea', 'maxLength' => '10000', 'rows' => 10)); ?>
 
 <div id="photo-list">
 	<div id="adv-photo0" class="form-entry-set">

@@ -72,7 +72,7 @@ form input.added-by-admin {
 #background-banner {
 	top: 27px;
 	position: absolute;
-	height: 183px;
+	height: 187px;
 	border-bottom: 3px solid #444;
 	border-top: 3px solid #444;
 	background: #444;
@@ -82,8 +82,7 @@ form input.added-by-admin {
 }
 
 #background-banner-image {
-	height: 183px;
-	width: 1027px;
+	height: 181px;	
 }
 
 #header-row-1 {	
@@ -233,9 +232,9 @@ form input.added-by-admin {
 	width: 100%;
 }
 
-#poll-header .hidden-content {
+/*#poll-header .hidden-content {
 	overflow:inherit !important;
-}
+}*/
 #header-search {
     float:right;    
     margin-right:0px;
@@ -262,10 +261,13 @@ form input.added-by-admin {
     clear: none;
     height: 20px;
 	-webkit-appearance: none;   
+	background: white;
+    height: 33px;
+    border: 1px solid #444;
 }	
 
 #header-search div.input input[type="text"] {	
-    padding-right: 10%;    
+    width:100%;   
 }	
 
 #header-search input[type="submit"] {   
@@ -274,7 +276,13 @@ form input.added-by-admin {
 	border:0
 }
 
+#below-location-map-row {
+	margin-top:10px;
+}
+
 /** Adventure Digest Styles **/
+
+
 #adv-titles {
 	max-height: 500px;
 	overflow-y: auto;
@@ -756,7 +764,7 @@ div.header-background-thumbnail { /*height: 100px;*/
 }
 
 #header-background-img-crop-area {
-	/*width: 960px;*/
+	width: 960px;
 	height: 166px;
 	position: absolute;
 	z-index: 100;
@@ -798,9 +806,10 @@ div.expRight {
 	clear: both;
 }
 
-.comments {
+#comments {
 	clear: both;	
 	margin-top: 20px;
+	display:block;
 }
 
 .comment {
@@ -975,5 +984,9 @@ body,.body {
 	margin-left:auto;
 	display:block;
 }
+
+/*.g-recaptcha > div, .g-recaptcha iframe {
+	width:100% !important;
+}*/
 
 	

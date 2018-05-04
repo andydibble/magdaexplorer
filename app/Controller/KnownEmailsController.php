@@ -122,10 +122,10 @@ class KnownEmailsController extends AppController {
 					$emailId = $this->Email->id;
 					if ($isAskingForUpdates == 1) {
 						$this->Session->setFlash("Thank you.  You will now receive updates on Magda's Adventures.");
-					} else {
-						$this->sendPassword($email);
+					} else {						
 						$this->Session->setFlash("Please check your email for the password to Magda Explorer.");
 					}
+					$this->sendPassword($email);
 				} else {
 					$this->Session->setFlash($this->KnownEmail->validationErrors['email'][0]);
 				}

@@ -8,7 +8,8 @@ $(document).ready(function() {
 	        success: function(data){				
 	            if (data.success) {
 	            	var statSelector = '#'+data.model.toLowerCase() + '-hugs-stat';			            		            									
-					$(statSelector).text(parseInt($(statSelector).text())+1);			
+					$(statSelector).text(parseInt($(statSelector).text())+1).css("background","yellow");	
+						
 		       	}		       	     
 	        }
 		});

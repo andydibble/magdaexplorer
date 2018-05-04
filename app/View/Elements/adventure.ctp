@@ -54,7 +54,7 @@
 		</div>
 		<?php endif; ?>		
 				
-		<div class="adv-actions col-12">
+		<div class="adv-actions row">
 			<div id="comments-toggler<?php echo $advId ?>" class="actions hidden-content-toggler">
 				<a>Leave Comment</a>								
 			</div>
@@ -64,7 +64,6 @@
 				<?php echo $this->Element('likes-display', array('likes' => $adv['Adventure']['likes']))?>				
 			</div>
 			
-														
 			<?php if($isAdmin): //admin only adv actions. ?>
 			<div class="actions adv-admin-actions">
 			<?php echo $this->Html->link('Edit', '/adventures/edit/'.$adv['Adventure']['id'])?>
@@ -82,10 +81,13 @@
 			<?php echo $this->Html->link($sendButtonLabel, '/knownEmails/edit/model:Adventure/id:'.$adv['Adventure']['id'])?>
 			</div>
 			<?php endif; ?>	
+			
+														
+			
 
 			
 			<?php echo $this->Element('comments', array('comments' => $adv['Comment'], 'parentId' => $adv['Adventure']['id'], 'title' => 'Comments')); ?>	
-			<div class="hidden-content" style="float:left">
+			<div class="col-12 hidden-content">
 			<?php echo $this->Element('add_comment', array('parentId' => $adv['Adventure']['id'])); ?>
 			</div>
 		</div>				

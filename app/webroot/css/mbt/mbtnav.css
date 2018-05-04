@@ -31,10 +31,6 @@
 
 }
 
-ul.mbtnav {
-	overflow:inherit !important;
-}
-
 .mbtnav ul {
     float: left;
     list-style: none;

@@ -1,4 +1,4 @@
-<div id="poll-header">
+<div id="poll-header" class="page-element-parent right-side-page-element">
 	<div class="section-header" id="poll-desc">
 		<div class="poll-prompt">Poll: <?php echo $texts['poll_prompt'] ?>
 		</div> <span id="poll-toggler"

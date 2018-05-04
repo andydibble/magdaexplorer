@@ -1,5 +1,6 @@
 <?php if ($isAdmin): ?>
 	<div class="actions">		
+	<?php echo $this->Html->link('Check-in', '/logins/add'); ?>						
 	<?php echo $this->Html->link('Edit Site Layout', '/texts/edit'); ?>
 	<?php echo $this->Html->link('Edit Email Templates', '/emailTexts/index'); ?>
 	

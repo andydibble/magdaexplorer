@@ -21,12 +21,14 @@
 			<?php echo $this->Form->input('email', array('placeholder' => "Enter Email", 'label' => 'Need Password?')); ?>
 			<?php echo $this->Form->input('send_updates', array('label' => "Receive updates about Magda's adventures?", 'type' => 'checkbox', 'default' => 0)); ?>
 			<div class="g-recaptcha" data-sitekey="6LdSklIUAAAAADvrkn6O28wH0-64fdb_J2Eubg-B" data-callback="verifyHumanity"></div>
+		
 			<?php echo $this->Form->submit(
 			'Submit', 
 				array('class' => 'disabled', 
 				'disabled' => true,
-				'div' => array('class' => 'submit center')));
-			echo $this->Form->end();?>
+				'div' => array('class' => 'submit center'))); ?>		
+			<?php echo $this->Form->end();?>
+			
 		
 	</div>
 </div>
@@ -38,7 +40,7 @@
 	function verifyHumanity() {			
 		$.ajax({
 		  type: "POST",
-		  url:"../pages/verifyHumanity",
+		  url:APPROOT + "pages/verifyHumanity",
 		  data: {"g-recaptcha-response" : $('#g-recaptcha-response').val()},
 		  success: function(result) {
 			  enableBtn();

@@ -1,4 +1,4 @@
-<div class="comments">		
+<div id="comments" class="row">		
 	<?php if(isset($title) && count($comments) > 0):?>
 	<div class="comments-title"><?php echo $title?></div>
 	<?php endif?>
@@ -9,8 +9,8 @@
 		<?php endif; ?>
 	<?php else:?>
 		<?php foreach($comments as $comment): ?>							
-			<div class="comment">
-				<div class="comment-body">
+			<div class="comment row">
+				<div class="comment-body col-10">
 					<div class="comment-value">			
 						<?php $value =  isset($comment['Comment']) ? $comment['Comment']['value'] : $comment['value']; ?>
 						<?php echo $value ?>				
@@ -20,7 +20,7 @@
 						<span class="comment-date"><?php echo $dateCreated; ?></span>
 					</div>
 				</div>
-				<div class="actions comment-like-button">
+				<div class="actions comment-like-button col-2">
 					<a id="<?php echo $comment['id']?>">Like</a>
 					<?php echo $this->Element('likes-display', array('likes' => $comment['likes']))?>				
 				</div>													

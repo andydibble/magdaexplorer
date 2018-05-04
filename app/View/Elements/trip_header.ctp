@@ -1,6 +1,6 @@
 <?php echo $this->Html->script('TripHeader.js'); ?>
 
-<div id="trip-header">								
+<div id="trip-header" class="page-element-parent right-side-page-element">								
 	<div class="section-header-wrapper">
 		<div class="section-header">
 			<div class="section-header-title"><?php 
@@ -24,12 +24,12 @@
 					if($type == 'Location'): 
 						echo $this->Html->link('Edit', '/locations/edit/'.$id);
 						echo $this->Html->link('Create Trip', '/trips/add/'.$location['id']);
-						echo $this->Html->link('Create Adeventure', '/adventures/add/'.$createAdvForTripId);
+						echo $this->Html->link('Create Adv.', '/adventures/add/'.$createAdvForTripId);
 						
 					
 					else:
 						echo $this->Html->link('Edit', '/trips/edit/'.$id);
-						echo $this->Html->link('Create Adeventure', '/adventures/add/'.$id);
+						echo $this->Html->link('Create Adv.', '/adventures/add/'.$id);
 				endif;
 			endif; ?>
 			</div>		

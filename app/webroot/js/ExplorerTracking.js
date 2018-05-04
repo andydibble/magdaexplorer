@@ -8,10 +8,14 @@ function saveSubjectLogin() {
             function (pos) {
                 var lat = pos.coords.latitude;
                 var lng = pos.coords.longitude;
-				console.log(lat, lng);
-                //codeLatLng(lat, long, saveLogin);
+				codeLatLng(lat, lng, saveLogin);
             },
-            function () {
+            function (error) {
+				$.ajax({
+				  type: "POST",
+				  url:APPROOT + "logins/logError",
+				  data: {"message" : JSON.stringify(error)}				  			
+				});
                 $.alert('Your location could not be found.');
             }
         );

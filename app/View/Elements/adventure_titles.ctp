@@ -1,4 +1,4 @@
-<div id="adv-titles">
+<div id="adv-titles" class="page-element-parent right-side-page-element">
 	<div class="section-header-wrapper">
 		<div class="section-header">
 			<div class="section-header-title">Adventure Digest</div>

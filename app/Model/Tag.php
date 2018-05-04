@@ -183,7 +183,7 @@ class Tag extends AppModel
 		foreach ($tripIds as $id) {
 			$tags += $this->findTagsByTripId($id);
 		}
-
+		sort($tags);
 		return $tags;
 	}
 

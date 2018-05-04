@@ -14,7 +14,7 @@ class HeaderImagesController extends AppController {
 		return false;
 	}
 	
-	public function add() {
+	function add() {
 		$this->prepAjax();
 			
 		if ($this->data) {

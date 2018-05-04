@@ -117,6 +117,15 @@ white-space: normal;
 	padding: 10px 1.5%;
 }
 
+div.adv-actions {
+	width:100%;
+}
+
+div.adv-actions > div {
+	display:inline-block;
+	clear:none;
+}
+
 .actions a,.page-actions a {
 	text-transform: capitalize;
 	
@@ -411,6 +420,10 @@ form div.textarea div {
 form .textarea {
 	clear:left;
 }
+/* make nicEditor responsive */
+.input.textarea > div[style*='width:'], div.nicEdit-main {
+	width:100% !important;
+}
 
 /* For making non-focused input fields light gray */
 form .input input {
@@ -551,7 +564,23 @@ form .error,form .error-message {
 /** Notices and Errors **/
 #flashMessage {
 	width: auto;
-	display: inline-block;
+	display: inline-block;	
+
+}
+
+body:not(.pages-controller) #flashMessage {
+	position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;    
+    text-align: center;
+	background: #5BA150 !important;	
+	text-align: center;	
+	font-weight:normal;
+	font-size: 140%;		
+	z-index: 1000;
+	width: 50%;
+    color: white;
 }
 
 /*.message {

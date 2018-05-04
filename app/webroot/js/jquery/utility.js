@@ -105,6 +105,18 @@
 	                return parent.nextElementInDom(selector);
 	        }
 	    };    
+		
+	$.fn.enableSubmitWhenNonempty = function() {
+		$(this).change(function() {
+			console.log('in');
+			if ($(this).val() != '') {
+				console.log('value not empty');
+				$(this).nextElementInDom('input[type="submit"]').enable();
+			}			
+		});
+		
+		
+	}
 	    
     $.colorToHex = function(color) {	    
 			var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
@@ -139,8 +151,12 @@
 		$(this).attr('disabled','disabled').addClass('disabled');
 	};
 	
+	$.fn.enable = function() {		
+		$(this).removeAttr('disabled').removeClass('disabled');
+	};
+	
 	$.reenableSubmits = function() {
-		$('input[type=submit]').removeAttr('disabled');
+		$('input[type=submit]').enable();
 	};
 	
 	$.fixLabelClick = function() {

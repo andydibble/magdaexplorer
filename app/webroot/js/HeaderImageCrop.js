@@ -69,7 +69,11 @@ HeaderImageCrop.prototype = {
 		
 		$('#header-background-img-crop-area')
 			.height(this.cropHeight/this.cropRatio)
-			.css('position', 'absolute')
+			.css('position', 'absolute')			
 			.css('top', $('#background-crop-y-input').val()/this.cropRatio + 'px');
+		
+		$('#header-background-img').load(function() {
+			$('#header-background-img-crop-area').width($(this).width());
+		});
 	}
 };

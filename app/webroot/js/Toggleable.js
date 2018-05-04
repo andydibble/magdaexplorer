@@ -8,6 +8,10 @@ $(document).ready(function() {
 		} else {
 			var hiddenContent = $(this).nextElementInDom(".hidden-content, .hidden-content-defer-hide");
 		}		
+		
+		hiddenContent.css('overflow','');
+		
+	
 				
 		if ($(hiddenContent).is(':visible')) {
 			if ($(this).is(':checked')) {
@@ -16,18 +20,22 @@ $(document).ready(function() {
 		} else {
 			if (!$(this).is(':checked')) {
 				$(this).prop('checked', true);	//will be visible shortly
-			}
+				
+			}	
+			hiddenContent.css('overflow','');
 		}
+		//console.log(hiddenContent.css('overflow'));
 		
-		hiddenContent.slideToggle(500);				
+		hiddenContent.slideToggle(500, function() {
+			$(this).css('overflow','');		
+		});				
 	});
 	
 	//set timeout so that content can fully render before it's hidden.
 	$(".hidden-content").hide();
 	if (isMobile) {
 		$(".mobile-hidden-content").hide();
-	}
-	//$(".hidden-content").hide();	//only hide hidden content that does not have the -defer-hide class.
+	}	
 });
 
 (function( $ ) {
@@ -39,7 +47,7 @@ $.fn.close = function() {
 
 $.fn.open = function() {
 	if (!$(this).is(':visible')) {
-		$(this).slideToggle(500);    
+		$(this).slideToggle(500);  		
 	}
 };
 

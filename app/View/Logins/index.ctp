@@ -21,7 +21,16 @@
 				<?php echo $login['venue']; ?>				
 			</td>
 			<td>
-				<?php echo $login['city'].', '.$login['region'].', '.$login['country']; ?>				
+				<?php 
+				echo $login['city'];
+				if (!empty($login['region'])) {
+					echo ", ".$login['region'];
+				}
+				if (!empty($login['country'])) {
+					', '.$login['country']; 	
+				}					
+				?>
+				
 			</td>			
 			<td>
 				<div id="map-<?php echo $login['id']?>" style="width:190px; height:190px; border: 1px solid #444">

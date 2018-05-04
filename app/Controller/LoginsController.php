@@ -2,7 +2,7 @@
 class LoginsController extends AppController {
 
 	var $uses = array('Login', 'Text');
-	var $adminOnly = array('add','delete');
+	var $adminOnly = array('add','delete','log');
 	var $paginate = array('Login' => array(
 		'order' => 'date DESC',
 		'limit' => 10));
@@ -21,50 +21,33 @@ class LoginsController extends AppController {
 	/**
 	 * Called on admin login to record location and timezone information.
 	 */
-	function add() {
-
-		$newLogin = $this->request->query;
-
-		//make check-in-city and venue agree with new data from geolocation
-		if ($city = $newLogin['city']) {
-			$curLoc = $city;
-			if ($country = $newLogin['country']) {
-				$curLoc = $city . ', ' . $country;
-				if ($region = $newLogin['region']) {
-					$curLoc = $city . ', ' .$region.', ' . $country;
-				}
-			}
-
-			$this->Text->id = $this->Text->field('id', array('name' => 'check_in_city'));
-			$this->Text->save(array('value' => $curLoc));
-
-			$mostRecent = $this->Login->findMostRecent(array('id', 'venue', 'city'));
-			$mostRecent = $mostRecent['Login'];
-
-			//assume venue is the same if the city has not changed and venue is empty.
-			if (!isset($newLogin['venue']) && $newLogin['city'] == $mostRecent['city']) {
-				$newLogin['venue'] = $mostRecent['venue'];
-			}
-			if (!empty($newLogin['venue'])) {
+	function add() {	
+		//override normal non-rendering of view for ajax.
+		/*if ($this->RequestHandler->isAjax()) {
+			$this->autoRender = true;		
+			$this->layout = 'ajax'; 
+		}*/
+			
+		if ($this->data) {			
+			$newLogin = $this->data;
+			$newLogin[$this->Login->name]['date'] = date(Configure::read('DB_DATE_FORMAT'));
+			if ($this->Login->save($newLogin)) {
+				//update city text in header to be consistent
+				$this->Text->id = $this->Text->field('id', array('name' => 'check_in_city'));						
+				$this->Text->save(array('value' => $newLogin[$this->Login->name]['city']));				
+				
+				//update venue too
 				$this->Text->id = $this->Text->field('id', array('name' => 'check_in_venue'));
-				$this->Text->save(array('value' => $newLogin['venue']));
-			}
-		}
-
-		//only update the date if location has not changed (same location means same venue, unless empty, then same location is same city).
-		if ((!empty($newLogin['venue']) && $newLogin['venue'] == $mostRecent['venue']) || (empty($newLogin['venue']) && $newLogin['city'] == $mostRecent['city'])) {
-			$mostRecent['date'] = date(Configure::read('DB_DATE_FORMAT'));
-			$this->Login->save($mostRecent, true, array_keys($mostRecent));
-		} else {
-			if ($this->Login->save($newLogin, true, array_keys($newLogin))) {
-				$this->Session->setFlash('Your login information was saved.');
-				$this->Session->write('Login.isLoginSaved', true); //on success
+				$this->Text->save(array('value' => $newLogin[$this->Login->name]['venue']));
+				
+				$this->Session->setFlash('Your Check-in was saved.');
+				$this->redirect('/trips/index/' . $id);				
 			} else {
-				$this->Session->setFlash('Your login information could not be saved.');	//TODO: make this be a counter to limit retries.
+				$this->Session->setFlash('Your Check-in could not be saved.  Please try again.');
 			}
-		}
-
-		$this->redirect('/trips/index/'.$this->Text->findHomepageTripId());
+			
+			
+		}			
 	}
 
 	/**
@@ -83,6 +66,10 @@ class LoginsController extends AppController {
 			$this->Session->setFlash('Your Login could not be deleted.  Please try again.');
 			return json_encode(array('success' => false));
 		}
+	}
+	
+	function logError() {
+		$this->log($this->data['message']);
 	}
 
 }

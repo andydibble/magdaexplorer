@@ -1,3 +1,5 @@
+
+
 $(function(){  	//setup autocomplete when page loads.
 	//addressAutocomplete();
 	setupAutocomplete();	
@@ -8,13 +10,14 @@ function addressAutocomplete(selector) {
 		selector = 'textarea[name*=address]';
 	}	
 	
-	let params = {			
+	var params = {			
 			types: ["geocode"]
 		}
 		
 	
 	$(selector).each(function(i,v) {
-		let autocomplete = new google.maps.places.Autocomplete(v,params);
+		var autocomplete = new google.maps.places.Autocomplete(v,params);
+		$(v).data("autocomplete",autocomplete);
 	});	
 }
 
