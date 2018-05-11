@@ -1,4 +1,4 @@
-<?php if(count($photos) > 0): ?>
+<?php if(!empty($photos) && count($photos) > 0): ?>
 <div id="banner" class="scroll-pane horizontal-scroll-pane ui-widget ui-widget-header ui-corner-all">
 				
 	<?php foreach($photos as $photo): ?>

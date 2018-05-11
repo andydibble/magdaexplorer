@@ -124,13 +124,13 @@
 	<div id="content-parent" class="center">		
 		<?php echo $this->Session->flash(); ?>
 
-		<?php if ($this->request['action'] !== 'login'): ?>
+		<?php //if ($this->request['action'] !== 'login'): ?>
 			<?php if ($this->request['controller'] == 'articles'): ?>
 				<?php echo $this->Element('Articles/header'); ?>
 			<?php else: ?>
 				<?php echo $this->Element('header'); ?>
 			<?php endif; ?>
-		<?php endif; ?>
+		<?php //endif; ?>
 
 		<div id="content">
 			<?php echo $this->fetch('content'); ?>

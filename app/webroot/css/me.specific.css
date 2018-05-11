@@ -985,6 +985,23 @@ body,.body {
 	display:block;
 }
 
+img#main-logo {
+    margin-top: -11vh;
+    background: #F6F6F6;
+    border-radius: 10px;
+    transform: rotateZ(353deg);
+    border: 1px #444 solid;
+	
+}
+
+img#plus-charlotte {
+    margin-top: -11vh;   
+	position:relative;
+	z-index:2;
+	margin-bottom: 5vh;
+}
+
+
 /*.g-recaptcha > div, .g-recaptcha iframe {
 	width:100% !important;
 }*/

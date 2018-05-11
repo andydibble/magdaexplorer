@@ -104,7 +104,7 @@ class PagesController extends AppController {
 			$this->Session->write('loginPassword', $this->data['Login']['password']);
 
 			$this->Auth->redirectToPrevious();
-
+	
 			$this->redirect('/trips/index/' . $redirectTripId);
 		}
 	}

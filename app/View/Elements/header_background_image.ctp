@@ -1,4 +1,4 @@
-<?php if($this->request['action'] != 'login'): ?>
+<?php //if($this->request['action'] != 'login'): ?>
 <div id="background-banner">	
 	<?php if(isset($headerBackground)): ?>
 	<?php if($this->request['controller'] == 'articles'):?>	
@@ -8,5 +8,5 @@
 	<?php endif; ?>
 	<?php endif; ?>	
 </div>
-<?php endif; ?>
+<?php //endif; ?>
 

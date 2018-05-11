@@ -106,10 +106,10 @@ class AppController extends Controller {
 	}	
 
 	//get trip list for navigation info on all pages.
-	public function beforeRender() {
+	public function beforeRender() {		
 		$locations = $this->locationList(true);
 		$this->set('locations', $locations);
-		if ($this->request['action'] != 'login' && $this->request['controller'] != 'pages') {
+		//if ($this->request['action'] != 'login' && $this->request['controller'] != 'pages') {
 			if ($this->Session->check('Trip.mostRecent')) {
 				$lastVisited = $this->Session->read('Trip.mostRecent');
 			} else {
@@ -152,8 +152,8 @@ class AppController extends Controller {
 			$texts = $this->setFieldToDefaultIfEmpty($texts);
 			$this->set('headerBackground', $trip['HeaderImage']['filename']);
 			$this->set('texts', $texts);
-			$this->set('location', $loc);
-		}
+			$this->set('location', $loc);					
+		//}
 
 		//for map display
 		$explorerLocInfo = $this->Login->find('first', array('order' => 'date DESC'));
